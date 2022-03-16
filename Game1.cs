@@ -19,9 +19,8 @@ namespace SchoolZenog
         Rectangle sourceRect, destRect, backgroundSourceRect, backgroundDestRect;
         Texture2D zyText, backgroundText;
         bool right;
-        int y, frames;
-        double x, zyX, zyY, backX;
-        SoundEffect chunLi;
+        int y, x, frames, backX;
+        SoundEffect music;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -32,90 +31,84 @@ namespace SchoolZenog
             graphics.PreferredBackBufferWidth = 960;
             graphics.PreferredBackBufferHeight = 540;
             graphics.ApplyChanges();
-            x = 210;
-            y = 30;
             frames = 0;
-            zyX = 400;
-            zyY = 400;
-            backX = 400;
-            sourceRect = new Rectangle((int)x, y, 40, 90);
-            destRect = new Rectangle((int)zyX, (int)zyY, 150, 150);
+            sourceRect = new Rectangle((int)x, y, 100, 100);
+            destRect = new Rectangle(400, 400, 100, 100);
             backgroundSourceRect = new Rectangle(0, 0, 800, 450);
-            backgroundDestRect = new Rectangle(0, 0, 
-                GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+            backgroundDestRect = new Rectangle(0, 0, 960, 540);
             right = true;
             base.Initialize();
         }
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            zyText = this.Content.Load<Texture2D>("ZySpritesheetTemp");
+            zyText = this.Content.Load<Texture2D>("ZySpritesheetForNow");
             backgroundText = this.Content.Load<Texture2D>("TestBackground");
-            chunLi = Content.Load<SoundEffect>("ThemeOfChunLi");
+            music = Content.Load<SoundEffect>("ThemeOfChunLi");
         }
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            sourceRect.X = (int)x;
+            sourceRect.X = x;
             sourceRect.Y = y;
-            destRect.X = (int)zyX - 20;
-            destRect.Y = (int)zyY;
             backgroundSourceRect.X = (int)backX;
             frames++;
-            //timer--;
+            KeyboardState kb = Keyboard.GetState();
             //AUDIO
             if (frames == 1)
-                chunLi.Play();
-            KeyboardState kb = Keyboard.GetState();
+                music.Play();
             //WALKING RIGHT
             if (kb.IsKeyDown(Keys.D) && !kb.IsKeyDown(Keys.A))
             {
-                zyText = this.Content.Load<Texture2D>("ZySpritesheetTemp");
-                y = 240;
+                y = 310;
+                /*
                 if (right == false)
-                    x = 270;
+                    x = 10;
+                    */
                 right = true;
                 if (frames % 7 == 0)
                 {
-                    x += 40;
-                    if (x >= 860)
+                    x += 100;
+                    if (x >= 610)
                     {
-                        x = 270;
+                        x = 10;
                     }
                 }
-                backX += .7;
+                backX += 1;
             }
             //WALKING LEFT
             if (kb.IsKeyDown(Keys.A) && !kb.IsKeyDown(Keys.D))
             {
-                 zyText = this.Content.Load<Texture2D>("ZySpritesheetTempLeft");
-                 y = 140;
+                 y = 310;
+                /*
                  if (right)
-                     x = 696;
+                     x = 10;
+                     */
                  right = false;
                  if (frames % 7 == 0)
                  {
-                     x -= 62;
-                     if (x <= 157)
+                     x += 100;
+                     if (x >= 610) //switch to < later cause images move left instead of right
                      {
-                        x = 696;
+                        x = 10;
                      }
                  }
-                 backX -= .7;
+                 backX -= 1;
              }
-             //IDLE STANCE + CROUCHING + PUNCHING
+             //IDLE STANCE
              if ((right && !kb.IsKeyDown(Keys.D)) || (right == false && !kb.IsKeyDown(Keys.A)))
              {
-                 if (right && !kb.IsKeyDown(Keys.E))
+                /*
+                 if (right)
                  {
-                     x = 5;
-                     y = 130;
-                 }
+                 */
+                     x = 10;
+                     y = 110;
+                 //}
              }
              oldKB = kb;
-             base.Update(gameTime);
-             
+             base.Update(gameTime);   
         }
         protected override void Draw(GameTime gameTime)
         {
