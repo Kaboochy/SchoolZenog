@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using System.IO;
 
 namespace SchoolZenog
 {
@@ -18,17 +19,53 @@ namespace SchoolZenog
         Texture2D tex;
         SpriteBatch spriteBatch;
 
-        public Animation(Texture2D tex, int a, int b)
+        public Animation(Texture2D tex, int a, int b, string path)
         {
             this.tex = tex;
             source = new Rectangle(a * 150, b * 150, 150, 150);
-            hitbox = this.Hitox(this.tex, source);
+            hitbox = Hitox(path);
         }
-        private List<Rectangle> Hitox(Texture2D tex, Rectangle source)
+        private List<Rectangle> Hitox(string path)
         {
-            List<Rectangle> Hits = new List<Rectangle>();
-
+            List<Rectangle> Hits = ReadFileOfIntegers(path);
             return Hits;
+        }
+        private List<Rectangle> ReadFileOfIntegers(string path)
+        {
+            List<Rectangle> rects = new List<Rectangle>();
+            try
+            {
+                using (StreamReader reader = new StreamReader(path))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        string[] num = line.Split(' ');
+                        rects.Add(new Rectangle(Convert.ToInt32(num[0]), Convert.ToInt32(num[1]), Convert.ToInt32(num[2]), Convert.ToInt32(num[3])));
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
+            return rects;
+        }
+        public List<Rectangle> Retrive(Vector2 location)
+        {
+            List<Rectangle> rects = new List<Rectangle>();
+            for (int i = 0; i < hitbox.Count; i++)
+            {
+                rects.Add(new Rectangle(hitbox[i].X + (int)location.X, hitbox[i].Y + (int)location.Y, hitbox[i].Width, hitbox[i].Height));
+            }
+            return rects;
+        }
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        {
+            spriteBatch.Begin();
+            spriteBatch.Draw(tex, location, source, Color.White);
+            spriteBatch.End();
         }
     }
 }
