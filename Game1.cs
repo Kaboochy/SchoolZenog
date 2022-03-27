@@ -1,4 +1,4 @@
-using System; 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace SchoolZenog2
+namespace SchoolZenog
 {
     public class Game1 : Microsoft.Xna.Framework.Game
     {
@@ -65,7 +65,7 @@ namespace SchoolZenog2
             //Attack
             if (mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released && combo == 1)
             {
-                x = 10;
+                x = 0;
                 y = 1950;
                 attackframes++;
                 combo++;
@@ -78,12 +78,12 @@ namespace SchoolZenog2
                     destRect.X = 800;
                     if (kb.IsKeyDown(Keys.LeftShift))
                     {
-                        y = 460;
+                        y = 450;
                         backX += 1.5;
                     }
                     else
                     {
-                        y = 310;
+                        y = 300;
                         backX += .7;
                     }
                     right = true;
@@ -94,12 +94,12 @@ namespace SchoolZenog2
                     destRect.X = 710;
                     if (kb.IsKeyDown(Keys.LeftShift))
                     {
-                        y = 460;
+                        y = 450;
                         backX -= 1.5;
                     }
                     else
                     {
-                        y = 310;
+                        y = 300;
                         backX -= .7;
                     }
                     right = false;
@@ -107,7 +107,7 @@ namespace SchoolZenog2
                 //IDLE
                 if ((!kb.IsKeyDown(Keys.D)) && (!kb.IsKeyDown(Keys.A)))
                 {
-                    y = 160;
+                    y = 150;
                 }
             }
             //ATTTACK LOGIC
@@ -115,19 +115,19 @@ namespace SchoolZenog2
             {
                 attackframes++;
             }
-            if(attackframes > 30)
+            if (attackframes > 30)
             {
                 {
                     attackframes = 0;
                     combo = 1;
-                }   
+                }
             }
             //ANIMATION
             if (frames % 7 == 0)
             {
-                if (x >= 760)
+                if (x >= 750)
                 {
-                    x = 10;
+                    x = 0;
                 }
                 x += 150;
             }
@@ -141,7 +141,7 @@ namespace SchoolZenog2
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
             spriteBatch.Draw(backgroundText, backgroundDestRect, backgroundSourceRect, Color.White);
-            if(right)
+            if (right)
                 spriteBatch.Draw(zyText, destRect, sourceRect, Color.White);
             else
                 spriteBatch.Draw(zyText, destRect, sourceRect, Color.White, 0.0f, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0.0f);
