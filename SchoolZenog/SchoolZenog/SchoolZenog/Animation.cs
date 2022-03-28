@@ -17,7 +17,6 @@ namespace SchoolZenog
         Rectangle source;
         List<Rectangle> hitbox;
         Texture2D tex;
-        SpriteBatch spriteBatch;
 
         public Animation(Texture2D tex, int a, int b, string path)
         {
@@ -52,7 +51,7 @@ namespace SchoolZenog
             }
             return rects;
         }
-        public List<Rectangle> Retrive(Vector2 location)
+        public List<Rectangle> Retrive(Vector2 location, int dic)
         {
             List<Rectangle> rects = new List<Rectangle>();
             for (int i = 0; i < hitbox.Count; i++)
