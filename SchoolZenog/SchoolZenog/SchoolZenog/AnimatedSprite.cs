@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -13,5 +13,36 @@ namespace SchoolZenog
 {
     class AnimatedSprite
     {
+        Animations anime;
+        int stop, currentFrame;
+        Animated currentAnime;
+
+    }
+
+    enum Animated
+    {
+        Enter,
+        idle,
+        walk,
+        run,
+        jump,
+        fallingL,
+        fallingH,
+        fallingA,
+        fallingS,
+        recover,
+        attack11,
+        attack12,
+        attack13,
+        attack21,
+        attack22,
+        attack23,
+        attackA1,
+        attackA2,
+        attackA3,
+        blockS,
+        blockA,
+        ult,
+        death
     }
 }
