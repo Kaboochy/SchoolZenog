@@ -13,9 +13,10 @@ namespace SchoolZenog
 {
     class AnimatedSprite
     {
-        Animations anime;
-        int stop, currentFrame;
-        Animated currentAnime;
+        public Animations anime;
+        public int stop, currentFrame;
+        public Animated currentAnime;
+
 
     }
 
