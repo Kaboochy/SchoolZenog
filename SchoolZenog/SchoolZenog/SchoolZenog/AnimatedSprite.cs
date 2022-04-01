@@ -16,8 +16,8 @@ namespace SchoolZenog
         public Animations anime;
         public int stop, currentFrame;
         public Animated currentAnime;
-
-
+        public bool right = true;
+        
     }
 
     enum Animated
