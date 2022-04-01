@@ -13,8 +13,9 @@ namespace SchoolZenog
 {
     class Zy : AnimatedSprite
     {
-        KeyboardState kb, oldKb;
-        MouseState mouse, oldMouse;
+        KeyboardState kb, oldKb = new KeyboardState();
+        MouseState mouse, oldMouse = new MouseState();
+
         public Zy(Texture2D tex)
         {
             for (int i = 0; i < 5; i++)
@@ -109,6 +110,14 @@ namespace SchoolZenog
             {
                 anime.death.Add(new Animation(tex, i, 1, @"Content/Hitboxes/Zy/Zy_death.txt"));
             }
+        }
+        public void Update(KeyboardState Kb, MouseState Mouse)
+        {
+            kb = Kb;
+            mouse = Mouse;
+
+            oldKb = kb;
+            oldMouse = mouse;
         }
     }
 }
