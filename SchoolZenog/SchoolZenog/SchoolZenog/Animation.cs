@@ -51,14 +51,35 @@ namespace SchoolZenog
             }
             return rects;
         }
-        public List<Rectangle> Retrive(Vector2 location, int dic)
+        public List<Rectangle> Retrive(Vector2 location, bool dic)
         {
             List<Rectangle> rects = new List<Rectangle>();
-            for (int i = 0; i < hitbox.Count; i++)
+            if (dic)
             {
-                rects.Add(new Rectangle(hitbox[i].X + (int)location.X, hitbox[i].Y + (int)location.Y, hitbox[i].Width, hitbox[i].Height));
+                for (int i = 0; i < hitbox.Count; i++)
+                {
+                    rects.Add(new Rectangle(hitbox[i].X + (int)location.X, hitbox[i].Y + (int)location.Y, hitbox[i].Width, hitbox[i].Height));
+                }
+            }
+            else
+            {
+                List<Rectangle> hit = new List<Rectangle>();
+                hit = flip(hitbox);
+                for (int i = 0; i < hitbox.Count; i++)
+                {
+                    rects.Add(new Rectangle(hit[i].X + (int)location.X, hit[i].Y + (int)location.Y, hit[i].Width, hit[i].Height));
+                }
             }
             return rects;
+        }
+        private List<Rectangle> flip(List<Rectangle> hitbox)
+        {
+            List<Rectangle> hit = new List<Rectangle>();
+            for (int i = 0; i < hitbox.Count; i++)
+            {
+                hit.Add(new Rectangle((150 - hitbox[i].X + hitbox[i].Width), hitbox[i].Y, hitbox[i].Width, hitbox[i].Height));
+            }
+            return hit;
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
