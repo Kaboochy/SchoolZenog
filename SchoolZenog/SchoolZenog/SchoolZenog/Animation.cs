@@ -18,10 +18,10 @@ namespace SchoolZenog
         List<Rectangle> hitbox;
         Texture2D tex;
 
-        public Animation(Texture2D tex, int a, int b, string path)
+        public Animation(Texture2D tex, int a, int b, int d, string path)
         {
             this.tex = tex;
-            source = new Rectangle(a * 150, b * 150, 150, 150);
+            source = new Rectangle(a * d, b * d, d, d);
             hitbox = Hitox(path);
         }
         private List<Rectangle> Hitox(string path)
