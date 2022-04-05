@@ -14,10 +14,28 @@ namespace SchoolZenog
     class AnimatedSprite
     {
         public Animations anime;
-        public int stop, currentFrame;
-        public Animated currentAnime;
+        public int stop = 0, currentFrame;
+        public Animated currentAnime, lastAnime;
         public bool right = true;
         
+        public void up()
+        {
+            if (currentAnime != lastAnime)
+            {
+                currentFrame = 0;
+            }
+            else
+            {
+                currentFrame++;
+            }
+        }
+        public void Draw(SpriteBatch sb, Rectangle dest)
+        {
+            if (currentAnime == Animated.Enter)
+            {
+
+            }
+        }
     }
 
     enum Animated
