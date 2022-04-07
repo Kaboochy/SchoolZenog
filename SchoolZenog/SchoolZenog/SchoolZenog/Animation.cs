@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -17,48 +17,46 @@ namespace SchoolZenog
         Rectangle source;
         List<Rectangle> hitbox;
         Texture2D tex;
+        int size;
 
         public Animation(Texture2D tex, int a, int b, int d, string path)
         {
             this.tex = tex;
-            source = new Rectangle(a * d, b * d, d, d);
-            hitbox = Hitox(path);
+            size = d;
+            source = new Rectangle(a * size, b * size, size, size);
+            hitbox = new List<Rectangle>();
+            hitbox.Add(Hitox(path, (a * 3)));
+            hitbox.Add(Hitox(path, (a * 3) + 1));
         }
-        private List<Rectangle> Hitox(string path)
+        private Rectangle Hitox(string path, int c)
         {
-            List<Rectangle> Hits = ReadFileOfIntegers(path);
-            return Hits;
+            return ReadFileOfIntegers(path, c);
         }
-        private List<Rectangle> ReadFileOfIntegers(string path)
+        private Rectangle ReadFileOfIntegers(string path, int c)
         {
-            List<Rectangle> rects = new List<Rectangle>();
+            Rectangle rect = new Rectangle();
             try
             {
-                using (StreamReader reader = new StreamReader(path))
-                {
-                    while (!reader.EndOfStream)
-                    {
-                        string line = reader.ReadLine();
-                        string[] num = line.Split(' ');
-                        rects.Add(new Rectangle(Convert.ToInt32(num[0]), Convert.ToInt32(num[1]), Convert.ToInt32(num[2]), Convert.ToInt32(num[3])));
-                    }
-                }
+                string line = File.ReadLines(path).Skip(c - 1).Take(1).First();
+                string[] num = line.Split(' ');
+                rect = (new Rectangle(Convert.ToInt32(num[0]), Convert.ToInt32(num[1]), Convert.ToInt32(num[2]), Convert.ToInt32(num[3])));
             }
             catch (Exception e)
             {
                 Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
             }
-            return rects;
+            return rect;
         }
-        public List<Rectangle> Retrive(Vector2 location, bool dic)
+        public List<Rectangle> Retrive(Rectangle location, bool dic)
         {
             List<Rectangle> rects = new List<Rectangle>();
+            int a =location.Width / size;
             if (dic)
             {
                 for (int i = 0; i < hitbox.Count; i++)
                 {
-                    rects.Add(new Rectangle(hitbox[i].X + (int)location.X, hitbox[i].Y + (int)location.Y, hitbox[i].Width, hitbox[i].Height));
+                    rects.Add(new Rectangle(hitbox[i].X * a + location.X, hitbox[i].Y * a + location.Y, hitbox[i].Width * a, hitbox[i].Height * a));
                 }
             }
             else
@@ -67,7 +65,7 @@ namespace SchoolZenog
                 hit = flip(hitbox);
                 for (int i = 0; i < hitbox.Count; i++)
                 {
-                    rects.Add(new Rectangle(hit[i].X + (int)location.X, hit[i].Y + (int)location.Y, hit[i].Width, hit[i].Height));
+                    rects.Add(new Rectangle(hit[i].X * a + (int)location.X, hit[i].Y * a + (int)location.Y, hit[i].Width * a, hit[i].Height * a));
                 }
             }
             return rects;
@@ -77,15 +75,51 @@ namespace SchoolZenog
             List<Rectangle> hit = new List<Rectangle>();
             for (int i = 0; i < hitbox.Count; i++)
             {
-                hit.Add(new Rectangle((150 - hitbox[i].X + hitbox[i].Width), hitbox[i].Y, hitbox[i].Width, hitbox[i].Height));
+                hit.Add(new Rectangle((size - hitbox[i].X + hitbox[i].Width), hitbox[i].Y, hitbox[i].Width, hitbox[i].Height));
             }
             return hit;
         }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Rectangle dest, bool right)
         {
-            spriteBatch.Begin();
-            spriteBatch.Draw(tex, location, source, Color.White);
-            spriteBatch.End();
+            if (right)
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(tex, dest, source, Color.White, 0.0f, new Vector2(0, 0), SpriteEffects.None, 0.0f);
+                spriteBatch.End();
+            }
+            else
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(tex, dest, source, Color.White, 0.0f, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0.0f);
+                spriteBatch.End();
+            }
         }
+    }
+
+    class Animations
+    {
+        public List<Animation> enter = new List<Animation>();
+        public List<Animation> idle = new List<Animation>();
+        public List<Animation> walk = new List<Animation>();
+        public List<Animation> run = new List<Animation>();
+        public List<Animation> jump = new List<Animation>();
+        public List<Animation> fallingL = new List<Animation>();
+        public List<Animation> fallingH = new List<Animation>();
+        public List<Animation> fallingA = new List<Animation>();
+        public List<Animation> fallingS = new List<Animation>();
+        public List<Animation> recover = new List<Animation>();
+        public List<Animation> attack11 = new List<Animation>();
+        public List<Animation> attack12 = new List<Animation>();
+        public List<Animation> attack13 = new List<Animation>();
+        public List<Animation> attack21 = new List<Animation>();
+        public List<Animation> attack22 = new List<Animation>();
+        public List<Animation> attack23 = new List<Animation>();
+        public List<Animation> attackA1 = new List<Animation>();
+        public List<Animation> attackA2 = new List<Animation>();
+        public List<Animation> attackA3 = new List<Animation>();
+        public List<Animation> blockS = new List<Animation>();
+        public List<Animation> blockA = new List<Animation>();
+        public List<Animation> ult = new List<Animation>();
+        public List<Animation> death = new List<Animation>();
     }
 }
