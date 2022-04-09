@@ -25,8 +25,8 @@ namespace SchoolZenog
             size = d;
             source = new Rectangle(a * size, b * size, size, size);
             hitbox = new List<Rectangle>();
-            hitbox.Add(Hitox(path, (a * 3)));
-            hitbox.Add(Hitox(path, (a * 3) + 1));
+            hitbox.Add(Hitox(path, (a * 2)));
+            hitbox.Add(Hitox(path, (a * 2) + 1));
         }
         private Rectangle Hitox(string path, int c)
         {
@@ -35,23 +35,15 @@ namespace SchoolZenog
         private Rectangle ReadFileOfIntegers(string path, int c)
         {
             Rectangle rect = new Rectangle();
-            try
-            {
-                string line = File.ReadLines(path).Skip(c - 1).Take(1).First();
-                string[] num = line.Split(' ');
-                rect = (new Rectangle(Convert.ToInt32(num[0]), Convert.ToInt32(num[1]), Convert.ToInt32(num[2]), Convert.ToInt32(num[3])));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
-            }
+            string line = File.ReadLines(path).Skip(c - 1).Take(1).First();
+            string[] num = line.Split(' ');
+            rect = (new Rectangle(Convert.ToInt32(num[0]), Convert.ToInt32(num[1]), Convert.ToInt32(num[2]), Convert.ToInt32(num[3])));
             return rect;
         }
         public List<Rectangle> Retrive(Rectangle location, bool dic)
         {
             List<Rectangle> rects = new List<Rectangle>();
-            int a =location.Width / size;
+            int a = location.Width / size;
             if (dic)
             {
                 for (int i = 0; i < hitbox.Count; i++)
@@ -79,19 +71,15 @@ namespace SchoolZenog
             }
             return hit;
         }
-        public void Draw(SpriteBatch spriteBatch, Rectangle dest, bool right)
+        public void Draw(SpriteBatch spriteBatch, Rectangle dest, bool right, Color col)
         {
             if (right)
             {
-                spriteBatch.Begin();
-                spriteBatch.Draw(tex, dest, source, Color.White, 0.0f, new Vector2(0, 0), SpriteEffects.None, 0.0f);
-                spriteBatch.End();
+                spriteBatch.Draw(tex, dest, source, col, 0.0f, new Vector2(0, 0), SpriteEffects.None, 0.0f);
             }
             else
             {
-                spriteBatch.Begin();
-                spriteBatch.Draw(tex, dest, source, Color.White, 0.0f, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0.0f);
-                spriteBatch.End();
+                spriteBatch.Draw(tex, dest, source, col, 0.0f, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0.0f);
             }
         }
     }

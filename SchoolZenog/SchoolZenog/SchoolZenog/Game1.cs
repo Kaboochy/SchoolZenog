@@ -18,8 +18,8 @@ namespace SchoolZenog
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        KeyboardState oldKB;
-        MouseState oldmouse;
+        KeyboardState oldKB, kb;
+        MouseState oldmouse, mouse;
         Rectangle destRect, backgroundSourceRect, backgroundDestRect, rangerSourceRect, rangerDestRect, projectileSourceRect, projectileRect, zyGreen, rangerGreen;
         Texture2D zyText, backgroundText, rangerText, blackText, whiteText, art;
         bool right, fire, projectileTimerBool;
@@ -35,7 +35,7 @@ namespace SchoolZenog
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
-        
+
         protected override void Initialize()
         {
             graphics.PreferredBackBufferWidth = 1920;
@@ -74,7 +74,7 @@ namespace SchoolZenog
 
             base.Initialize();
         }
-        
+
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
@@ -86,13 +86,15 @@ namespace SchoolZenog
             whiteText = Content.Load<Texture2D>("White_Square");
             art = Content.Load<Texture2D>("Start_Screen");
             music = Content.Load<SoundEffect>("ThemeOfChunLi");
+
+            zy = new Zy(zyText);
         }
-        
+
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
         }
-        
+
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
@@ -101,8 +103,8 @@ namespace SchoolZenog
             backgroundSourceRect.X = (int)backX;
             rangerDestRect.X = (int)rangerX;
             projectileRect.X = (int)projectileX;
-            KeyboardState kb = Keyboard.GetState();
-            MouseState mouse = Mouse.GetState();
+            kb = Keyboard.GetState();
+            mouse = Mouse.GetState();
             //GAMESTATES
             if (kb.IsKeyDown(Keys.Enter) && !oldKB.IsKeyDown(Keys.Enter) && gameState == Gamestate.start)
             {
@@ -116,13 +118,8 @@ namespace SchoolZenog
                 //AUDIO
                 if (frames == 1)
                     music.Play();
-                //Attack
-                if (mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released && combo == 1)
-                {
-                    attackframes++;
-                    combo++;
-                }
                 //MOVEMENT
+                zy.Update(kb, mouse);
                 if (attackframes == 0)
                 {
                     //RIGHT
@@ -171,11 +168,11 @@ namespace SchoolZenog
                 {
                     attackframes++;
                     if (!right)
-                    if (hitbox.Intersects(rangerDestRect) && attackframes > 17)
-                    {
-                        rangerHealth -= 20;
-                        rangerColor = Color.Red;
-                    }
+                        if (zy.Hit(destRect, rangerDestRect) && attackframes > 17)
+                        {
+                            rangerHealth -= 20;
+                            rangerColor = Color.Red;
+                        }
                 }
                 if (attackframes > 30)
                 {
@@ -208,17 +205,21 @@ namespace SchoolZenog
                     if (fire)
                     {
                         projectileX--;
-                        if (projectileRect.Intersects(hitbox))
+                        List<Rectangle> hit = zy.Retrive(destRect);
+                        for (int i = 0; i < hit.Count; i++)
                         {
-                            fire = false;
-                            projectileX = rangerX + 30;
-                            if (attackframes < 3)
+                            if (projectileRect.Intersects(hit[1]))
                             {
-                                zyColor = Color.Red;
-                                zyHealth -= 100;
+                                fire = false;
+                                projectileX = rangerX + 30;
+                                if (attackframes < 3)
+                                {
+                                    zyColor = Color.Red;
+                                    zyHealth -= 100;
+                                }
+                                else
+                                    zyColor = Color.White;
                             }
-                            else
-                                zyColor = Color.White;
                         }
                     }
 
@@ -234,13 +235,41 @@ namespace SchoolZenog
             oldmouse = mouse;
             base.Update(gameTime);
         }
-        
+
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
+            GraphicsDevice.Clear(Color.Black);
+            spriteBatch.Begin();
+            if (gameState == Gamestate.play)
+            {
+                spriteBatch.Draw(backgroundText, backgroundDestRect, backgroundSourceRect, Color.White);
+                //HITBOX
+                {
+                    List<Rectangle> hit = zy.Retrive(destRect);
+                    for (int i = 0; i < hit.Count; i++)
+                    {
+                        spriteBatch.Draw(whiteText, hit[i], new Color(70, 0, 0, -100));
+                    }
+                }
+                //ranger ENEMY
+                if (rangerHealth > 0)
+                {
+                    spriteBatch.Draw(rangerText, rangerDestRect, rangerSourceRect, rangerColor);
+                    spriteBatch.Draw(whiteText, rangerGreen, Color.LimeGreen);
+                }
+                //ZY
+                zy.Draw(spriteBatch, destRect, zyColor);
+                //PROJECTILE
+                if (rangerHealth > 0)
+                    spriteBatch.Draw(rangerText, projectileRect, projectileSourceRect, Color.White);
+                //HUD
+                spriteBatch.Draw(whiteText, zyGreen, Color.LimeGreen);
+            }
+            if (gameState == Gamestate.start)
+            {
+                spriteBatch.Draw(art, new Rectangle(0, 0, 1920, 1080), Color.White);
+            }
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
