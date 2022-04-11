@@ -11,9 +11,6 @@ using Microsoft.Xna.Framework.Media;
 
 namespace SchoolZenog
 {
-    /// <summary>
-    /// This is the main type for your game
-    /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
@@ -22,8 +19,8 @@ namespace SchoolZenog
         MouseState oldmouse, mouse;
         Rectangle destRect, backgroundSourceRect, backgroundDestRect, rangerSourceRect, rangerDestRect, projectileSourceRect, projectileRect, zyGreen, rangerGreen;
         Texture2D zyText, backgroundText, rangerText, blackText, whiteText, art;
-        bool right, fire, projectileTimerBool;
-        int frames, attackframes, combo, projectileTimer, rangerHealth, zyHealth;
+        bool fire, projectileTimerBool;
+        int frames, projectileTimer, rangerHealth, zyHealth;
         double backX, rangerX, projectileX;
         SoundEffect music;
         Color rangerColor, zyColor;
@@ -47,9 +44,6 @@ namespace SchoolZenog
             zyGreen = new Rectangle(50, 50, 500, 50);
             zyColor = new Color(255, 255, 255);
             zyHealth = 1000;
-            right = true;
-            attackframes = 0;
-            combo = 1;
             //Bachground
             backgroundSourceRect = new Rectangle(0, 0, 800, 450);
             backgroundDestRect = new Rectangle(0, 0, 1920, 1080);
@@ -71,7 +65,6 @@ namespace SchoolZenog
             frames = 0;
             oldmouse = Mouse.GetState();
             gameState = Gamestate.start;
-
             base.Initialize();
         }
 
@@ -86,7 +79,6 @@ namespace SchoolZenog
             whiteText = Content.Load<Texture2D>("White_Square");
             art = Content.Load<Texture2D>("Start_Screen");
             music = Content.Load<SoundEffect>("ThemeOfChunLi");
-
             zy = new Zy(zyText);
         }
 
@@ -105,6 +97,7 @@ namespace SchoolZenog
             projectileRect.X = (int)projectileX;
             kb = Keyboard.GetState();
             mouse = Mouse.GetState();
+            zyGreen.Width = zyHealth;
             //GAMESTATES
             if (kb.IsKeyDown(Keys.Enter) && !oldKB.IsKeyDown(Keys.Enter) && gameState == Gamestate.start)
             {
@@ -139,7 +132,6 @@ namespace SchoolZenog
                             rangerX -= 1.65;
                             projectileX -= 1.65;
                         }
-                        right = true;
                     }
                     //LEFT
                     if (kb.IsKeyDown(Keys.A) && !kb.IsKeyDown(Keys.D))
@@ -157,30 +149,14 @@ namespace SchoolZenog
                             rangerX += 1.65;
                             projectileX += 1.65;
                         }
-                        right = false;
                     }
                 }
-                //Damage
-                else
+                //DEALING DAMAGE
+                if (zy.Hit(destRect, rangerDestRect))
                 {
-                    attackframes++;
-                    if (!right)
-                        if (zy.Hit(destRect, rangerDestRect) && attackframes > 17)
-                        {
-                            rangerHealth -= 20;
-                            rangerColor = Color.Red;
-                        }
+                    rangerHealth -= 20;
+                    rangerColor = Color.Red;
                 }
-                if (attackframes > 30)
-                {
-                    {
-                        attackframes = 0;
-                        combo = 1;
-                        rangerColor = Color.White;
-                    }
-                }
-                //ZY HEALTH
-                zyGreen.Width = zyHealth;
                 //RANGER
                 if (rangerHealth > 0)
                 {
@@ -201,25 +177,17 @@ namespace SchoolZenog
                     //RANGER SHOOTING
                     if (fire)
                     {
-                        projectileX--;
+                        projectileX-=5;
                         List<Rectangle> hit = zy.Retrive(destRect);
                         for (int i = 0; i < hit.Count; i++)
                         {
-                            if (projectileRect.Intersects(hit[1]))
+                            if (projectileRect.Intersects(hit[1]) || projectileX < -30)
                             {
                                 fire = false;
                                 projectileX = rangerX + 30;
-                                if (attackframes < 3)
-                                {
-                                    zyColor = Color.Red;
-                                    zyHealth -= 100;
-                                }
-                                else
-                                    zyColor = Color.White;
                             }
                         }
                     }
-
                     //TIMER
                     if (projectileTimerBool)
                     {
