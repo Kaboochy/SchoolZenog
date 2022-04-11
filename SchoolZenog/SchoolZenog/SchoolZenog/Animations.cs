@@ -13,28 +13,28 @@ namespace SchoolZenog
 {
     class Animations
     {
-        public List<Animation> enter;
-        public List<Animation> idle;
-        public List<Animation> walk;
-        public List<Animation> run;
-        public List<Animation> jump;
-        public List<Animation> fallingL;
-        public List<Animation> fallingH;
-        public List<Animation> fallingA;
-        public List<Animation> fallingS;
-        public List<Animation> recover;
-        public List<Animation> attack11;
-        public List<Animation> attack12;
-        public List<Animation> attack13;
-        public List<Animation> attack21;
-        public List<Animation> attack22;
-        public List<Animation> attack23;
-        public List<Animation> attackA1;
-        public List<Animation> attackA2;
-        public List<Animation> attackA3;
-        public List<Animation> blockS;
-        public List<Animation> blockA;
-        public List<Animation> ult;
-        public List<Animation> death;
+        public List<Animation> enter = new List<Animation>();
+        public List<Animation> idle = new List<Animation>();
+        public List<Animation> walk = new List<Animation>();
+        public List<Animation> run = new List<Animation>();
+        public List<Animation> jump = new List<Animation>();
+        public List<Animation> fallingL = new List<Animation>();
+        public List<Animation> fallingH = new List<Animation>();
+        public List<Animation> fallingA = new List<Animation>();
+        public List<Animation> fallingS = new List<Animation>();
+        public List<Animation> recover = new List<Animation>();
+        public List<Animation> attack11 = new List<Animation>();
+        public List<Animation> attack12 = new List<Animation>();
+        public List<Animation> attack13 = new List<Animation>();
+        public List<Animation> attack21 = new List<Animation>();
+        public List<Animation> attack22 = new List<Animation>();
+        public List<Animation> attack23 = new List<Animation>();
+        public List<Animation> attackA1 = new List<Animation>();
+        public List<Animation> attackA2 = new List<Animation>();
+        public List<Animation> attackA3 = new List<Animation>();
+        public List<Animation> blockS = new List<Animation>();
+        public List<Animation> blockA = new List<Animation>();
+        public List<Animation> ult = new List<Animation>();
+        public List<Animation> death = new List<Animation>();
     }
 }
