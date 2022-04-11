@@ -119,8 +119,9 @@ namespace SchoolZenog
                 if (frames == 1)
                     music.Play();
                 //MOVEMENT
-                zy.Update(kb, mouse);
-                if (attackframes == 0)
+                if (frames % 7 == 0)
+                    zy.Update(kb, mouse);
+                if (zy.stop != 1)
                 {
                     //RIGHT
                     if (kb.IsKeyDown(Keys.D) && !kb.IsKeyDown(Keys.A))
@@ -158,12 +159,8 @@ namespace SchoolZenog
                         }
                         right = false;
                     }
-                    //IDLE
-                    if ((!kb.IsKeyDown(Keys.D)) && (!kb.IsKeyDown(Keys.A)))
-                    {
-                    }
                 }
-                //ATTTACK LOGIC
+                //Damage
                 else
                 {
                     attackframes++;

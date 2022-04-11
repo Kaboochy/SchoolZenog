@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -146,6 +146,10 @@ namespace SchoolZenog
             }
             //frame update
             up();
+            if (stop == 1 && currentFrame + 1 == Number())
+            {
+                stop = 0;
+            }
             // hitbox logic
 
             oldKb = kb;

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -157,7 +157,7 @@ namespace SchoolZenog
                 return new List<Rectangle>();
             }
         }
-        private int Number()
+        public int Number()
         {
             if (currentAnime == Animated.Enter)
             {
