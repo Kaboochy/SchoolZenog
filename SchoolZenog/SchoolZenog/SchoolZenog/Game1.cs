@@ -152,12 +152,24 @@ namespace SchoolZenog
             //SETTINGS LOGIC
             if (gameState == Gamestate.settings)
             {
+                //BACK
                 if (mouseRect.Intersects(backRect))
                     quitColor = new Color(50, 50, 50, 1);
                 else
                     quitColor = new Color(100, 100, 100, 1);
                 if (mouseRect.Intersects(backRect) && mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released)
                     gameState = Gamestate.start;
+                //SLIDER
+                if (volumeSlider.X > 1200)
+                    volumeSlider.X = 1180;
+                if (volumeSlider.X < 700)
+                    volumeSlider.X = 720;
+                if (mouseRect.Intersects(volumeSlider) && mouse.LeftButton == ButtonState.Pressed)
+                {
+                    if (volumeSlider.X < 1200 && volumeSlider.X > 700)
+                        volumeSlider.X = mouse.X;
+
+                }
             }
             //IN GAME LOGIC
             if (gameState == Gamestate.play)
