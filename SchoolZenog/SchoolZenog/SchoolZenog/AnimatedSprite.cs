@@ -351,6 +351,14 @@ namespace SchoolZenog
                 anime.death[currentFrame].Draw(sb, dest, right, col);
             }
         }
+        public void DrawHitbox(SpriteBatch sb, Rectangle dest, Texture2D tex)
+        {
+            List<Rectangle> hit = Retrive(dest);
+            for (int i = 0; i < hit.Count; i++)
+            {
+                sb.Draw(tex, hit[i], new Color(70, 0, 0, -100));
+            }
+        }
     }
 
     enum Animated

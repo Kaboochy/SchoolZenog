@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolZenog", "SchoolZenog\SchoolZenog\SchoolZenog.csproj", "{E2234092-EDD3-47F8-B3A7-C9E3FABA4657}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolZenog", "SchoolZenog\SchoolZenog\SchoolZenog.csproj", "{0F44E67C-F7C2-42B7-AF42-AC25BD491987}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "SchoolZenogContent", "SchoolZenog\SchoolZenogContent\SchoolZenogContent.contentproj", "{3C333FFA-18B7-4572-AC2D-1572B0D35DA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolZenogContent", "SchoolZenog\SchoolZenogContent\SchoolZenogContent.contentproj", "{3C333FFA-18B7-4572-AC2D-1572B0D35DA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,17 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E2234092-EDD3-47F8-B3A7-C9E3FABA4657}.Debug|x86.ActiveCfg = Debug|x86
-		{E2234092-EDD3-47F8-B3A7-C9E3FABA4657}.Debug|x86.Build.0 = Debug|x86
-		{E2234092-EDD3-47F8-B3A7-C9E3FABA4657}.Release|x86.ActiveCfg = Release|x86
-		{E2234092-EDD3-47F8-B3A7-C9E3FABA4657}.Release|x86.Build.0 = Release|x86
+		{0F44E67C-F7C2-42B7-AF42-AC25BD491987}.Debug|x86.ActiveCfg = Debug|x86
+		{0F44E67C-F7C2-42B7-AF42-AC25BD491987}.Debug|x86.Build.0 = Debug|x86
+		{0F44E67C-F7C2-42B7-AF42-AC25BD491987}.Release|x86.ActiveCfg = Release|x86
+		{0F44E67C-F7C2-42B7-AF42-AC25BD491987}.Release|x86.Build.0 = Release|x86
 		{3C333FFA-18B7-4572-AC2D-1572B0D35DA5}.Debug|x86.ActiveCfg = Debug|x86
 		{3C333FFA-18B7-4572-AC2D-1572B0D35DA5}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DB1FBD9-8161-4CE1-9299-3EE365C64573}
 	EndGlobalSection
 EndGlobal

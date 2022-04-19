@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\jacob\Source\Repos\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Ranger_Sprite.xnb</Output>
-      <Time>2022-04-08T20:48:14.6460015-05:00</Time>
+      <Output>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Ranger_Sprite.xnb</Output>
+      <Time>2022-04-11T15:27:08.1065974-05:00</Time>
     </Item>
     <Item>
       <Source>Rectangle.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\jacob\Source\Repos\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Rectangle.xnb</Output>
-      <Time>2022-04-08T20:48:14.656001-05:00</Time>
+      <Output>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Rectangle.xnb</Output>
+      <Time>2022-04-11T15:27:08.1255461-05:00</Time>
     </Item>
     <Item>
       <Source>Start_Screen.jpg</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\jacob\Source\Repos\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Start_Screen.xnb</Output>
-      <Time>2022-04-08T20:49:10.6131464-05:00</Time>
+      <Output>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Start_Screen.xnb</Output>
+      <Time>2022-04-11T15:27:08.3040687-05:00</Time>
     </Item>
     <Item>
       <Source>TestBackground.jpg</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\jacob\Source\Repos\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\TestBackground.xnb</Output>
-      <Time>2022-04-08T20:49:10.6196459-05:00</Time>
+      <Output>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\TestBackground.xnb</Output>
+      <Time>2022-04-11T15:27:08.3230201-05:00</Time>
     </Item>
     <Item>
       <Source>White_Square.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\jacob\Source\Repos\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\White_Square.xnb</Output>
-      <Time>2022-04-08T20:49:10.6741459-05:00</Time>
+      <Output>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\White_Square.xnb</Output>
+      <Time>2022-04-11T15:27:08.9353463-05:00</Time>
     </Item>
     <Item>
       <Source>Zy_Sprite.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\jacob\Source\Repos\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Zy_Sprite.xnb</Output>
-      <Time>2022-04-08T20:49:10.832138-05:00</Time>
+      <Output>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Zy_Sprite.xnb</Output>
+      <Time>2022-04-11T15:27:08.9580921-05:00</Time>
     </Item>
     <Item>
       <Source>ThemeOfChunLi.wav</Source>
@@ -61,8 +61,35 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\jacob\Source\Repos\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\ThemeOfChunLi.xnb</Output>
-      <Time>2022-04-08T20:49:10.665645-05:00</Time>
+      <Output>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\ThemeOfChunLi.xnb</Output>
+      <Time>2022-04-11T15:27:08.9129094-05:00</Time>
+    </Item>
+    <Item>
+      <Source>SpriteFont1.spritefont</Source>
+      <Name>SpriteFont1</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2022-04-15T12:07:08.5164164-05:00</Time>
+    </Item>
+    <Item>
+      <Source>zenogFont.spritefont</Source>
+      <Name>zenogFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogFont.xnb</Output>
+      <Time>2022-04-15T12:32:08.422199-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tinyFont.spritefont</Source>
+      <Name>tinyFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\tinyFont.xnb</Output>
+      <Time>2022-04-15T13:13:47.8277998-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -71,10 +98,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\jacob\Source\Repos\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenogContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\jacob\Source\Repos\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\jacob\Source\Repos\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\jacob\Source\Repos\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenogContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -102,8 +129,8 @@
         <Value>2011-09-01T16:22:30-05:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2022-01-18T07:40:46.797726-06:00</Value>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2021-08-22T13:38:26.0794093-05:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

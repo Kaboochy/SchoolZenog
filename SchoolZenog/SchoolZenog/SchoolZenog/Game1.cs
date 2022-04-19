@@ -18,17 +18,16 @@ namespace SchoolZenog
         KeyboardState oldKB, kb;
         MouseState oldmouse, mouse;
         Rectangle destRect, backgroundSourceRect, backgroundDestRect, rangerSourceRect, rangerDestRect, projectileSourceRect, projectileRect,
-            zyGreen, rangerGreen, startRect, settingsRect, quitRect;
+            zyGreen, rangerGreen, startRect, settingsRect, quitRect, mouseRect, volumeBar, volumeSlider, backRect;
         Texture2D zyText, backgroundText, rangerText, blackText, whiteText, art;
         bool fire, projectileTimerBool;
-        int frames, projectileTimer, rangerHealth, zyHealth, scale;
+        int frames, projectileTimer, rangerHealth, zyHealth;
         double backX, rangerX, projectileX;
-        string startText, zenogText, settingsText, quitText;
-        Vector2 startTextVector, settingsTextVector, quitTextVector;
+        string startText, zenogText, settingsText, quitText, volumeText, backText;
         SoundEffect music;
-        Color rangerColor, zyColor;
+        Color rangerColor, zyColor, startColor, settingsColor, quitColor;
         Gamestate gameState;
-        SpriteFont Font1, zenogFont;
+        SpriteFont Font1, zenogFont, tinyFont;
         Zy zy;
 
         public Game1()
@@ -39,6 +38,7 @@ namespace SchoolZenog
 
         protected override void Initialize()
         {
+            //graphics.IsFullScreen = true;
             graphics.PreferredBackBufferWidth = 1920;
             graphics.PreferredBackBufferHeight = 1080;
             IsMouseVisible = true;
@@ -69,14 +69,20 @@ namespace SchoolZenog
             startText = "START";
             settingsText = "OPTIONS";
             quitText = "QUIT";
-            startTextVector = new Vector2(855, 550);
-            settingsTextVector = new Vector2(810, 700);
-            quitTextVector = new Vector2(865, 850);
-            scale = 1;
             startRect = new Rectangle(790, 540, 320, 120);
             settingsRect = new Rectangle(790, 690, 320, 120);
             quitRect = new Rectangle(790, 840, 320, 120);
             zenogText = "Zenog";
+            mouseRect = new Rectangle(10, 10, 10, 10);
+            startColor = new Color(100, 100, 100, 1);
+            settingsColor = new Color(100, 100, 100, 1);
+            quitColor = new Color(100, 100, 100, 1);
+            //SETTINGS
+            volumeBar = new Rectangle(700, 700, 500, 20);
+            volumeSlider = new Rectangle(710, 693, 35, 35);
+            volumeText = "VOLUME";
+            backRect = new Rectangle(50, 400, 320, 120);
+            backText = "BACK";
             //Else
             frames = 0;
             oldmouse = Mouse.GetState();
@@ -97,6 +103,7 @@ namespace SchoolZenog
             music = Content.Load<SoundEffect>("ThemeOfChunLi");
             Font1 = Content.Load<SpriteFont>("SpriteFont1");
             zenogFont = Content.Load<SpriteFont>("zenogFont");
+            tinyFont = Content.Load<SpriteFont>("tinyFont");
             zy = new Zy(zyText);
         }
 
@@ -107,21 +114,52 @@ namespace SchoolZenog
 
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+            //GENERAL
             backgroundSourceRect.X = (int)backX;
             rangerDestRect.X = (int)rangerX;
             projectileRect.X = (int)projectileX;
             kb = Keyboard.GetState();
             mouse = Mouse.GetState();
+            mouseRect.X = mouse.X;
+            mouseRect.Y = mouse.Y;
             zyGreen.Width = zyHealth;
             //GAMESTATES
+            //START SCREEN LOGIC
             if (gameState == Gamestate.start)
             {
-                if(mouse.X > 500 && mouse.Y > 500 && mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released)
+                //START
+                if (mouseRect.Intersects(startRect))
+                    startColor = new Color(50, 50, 50, 1);
+                else
+                    startColor = new Color(100, 100, 100, 1);
+                if (mouseRect.Intersects(startRect) && mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released)
                     gameState = Gamestate.play;
+                //SETTINGS
+                if (mouseRect.Intersects(settingsRect))
+                    settingsColor = new Color(50, 50, 50, 1);
+                else
+                    settingsColor = new Color(100, 100, 100, 1);
+                if (mouseRect.Intersects(settingsRect) && mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released)
+                    gameState = Gamestate.settings;
+                //QUIT
+                if (mouseRect.Intersects(quitRect))
+                    quitColor = new Color(50, 50, 50, 1);
+                else
+                    quitColor = new Color(100, 100, 100, 1);
+                if (mouseRect.Intersects(quitRect) && mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released)
+                    Exit();
             }
+            //SETTINGS LOGIC
+            if (gameState == Gamestate.settings)
+            {
+                if (mouseRect.Intersects(backRect))
+                    quitColor = new Color(50, 50, 50, 1);
+                else
+                    quitColor = new Color(100, 100, 100, 1);
+                if (mouseRect.Intersects(backRect) && mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released)
+                    gameState = Gamestate.start;
+            }
+            //IN GAME LOGIC
             if (gameState == Gamestate.play)
             {
                 frames++;
@@ -196,7 +234,7 @@ namespace SchoolZenog
                     //RANGER SHOOTING
                     if (fire)
                     {
-                        projectileX-=5;
+                        projectileX -= 5;
                         List<Rectangle> hit = zy.Retrive(destRect);
                         for (int i = 0; i < hit.Count; i++)
                         {
@@ -214,6 +252,7 @@ namespace SchoolZenog
                     }
                 }
             }
+
             //END OF FRAME
             oldKB = kb;
             oldmouse = mouse;
@@ -249,21 +288,39 @@ namespace SchoolZenog
             if (gameState == Gamestate.start)
             {
                 //BACKGROUND
-                spriteBatch.Draw(art, new Rectangle(0, 0, 1920, 1080), new Color(100,100,150,1));
+                spriteBatch.Draw(art, new Rectangle(0, 0, 1920, 1080), new Color(100, 100, 150, 1));
                 //START BOX
-                spriteBatch.Draw(whiteText, startRect, new Color(100,100,100,1));
-                spriteBatch.DrawString(Font1, startText, startTextVector, Color.Black, 0, new Vector2(0, 0), scale, SpriteEffects.None, 0);
+                spriteBatch.Draw(whiteText, startRect, startColor);
+                spriteBatch.DrawString(Font1, startText, new Vector2(855, 550), Color.Black);
                 spriteBatch.Draw(blackText, startRect, Color.White);
                 //SETTINGS BOX
-                spriteBatch.Draw(whiteText, settingsRect, new Color(100, 100, 100, 1));
-                spriteBatch.DrawString(Font1, settingsText, settingsTextVector, Color.Black, 0, new Vector2(0, 0), scale, SpriteEffects.None, 0);
+                spriteBatch.Draw(whiteText, settingsRect, settingsColor);
+                spriteBatch.DrawString(Font1, settingsText, new Vector2(810, 700), Color.Black);
                 spriteBatch.Draw(blackText, settingsRect, Color.White);
                 //QUIT BOX
-                spriteBatch.Draw(whiteText, quitRect, new Color(100, 100, 100, 1));
-                spriteBatch.DrawString(Font1, quitText, quitTextVector, Color.Black, 0, new Vector2(0, 0), scale, SpriteEffects.None, 0);
+                spriteBatch.Draw(whiteText, quitRect, quitColor);
+                spriteBatch.DrawString(Font1, quitText, new Vector2(865, 850), Color.Black);
                 spriteBatch.Draw(blackText, quitRect, Color.White);
                 //LOGO
                 spriteBatch.DrawString(zenogFont, zenogText, new Vector2(690, 80), Color.White);
+            }
+            //SETTINGS
+            if (gameState == Gamestate.settings)
+            {
+                //BACKGROUND
+                spriteBatch.Draw(art, new Rectangle(0, 0, 1920, 1080), new Color(100, 100, 150, 1));
+                spriteBatch.Draw(whiteText, new Rectangle(400, 400, 1200, 500), startColor);
+                //LOGO
+                spriteBatch.DrawString(zenogFont, zenogText, new Vector2(690, 80), Color.White);
+                //VOLUME BAR
+                spriteBatch.DrawString(Font1, settingsText, new Vector2(810, 500), Color.White);
+                spriteBatch.Draw(whiteText, volumeBar, Color.White);
+                spriteBatch.Draw(whiteText, volumeSlider, Color.White);
+                spriteBatch.DrawString(tinyFont, volumeText, new Vector2(540, 680), Color.White);
+                //BACK
+                spriteBatch.Draw(whiteText, backRect, quitColor);
+                spriteBatch.Draw(blackText, backRect, Color.White);
+                spriteBatch.DrawString(Font1, backText, new Vector2(100, 400), Color.Black);
             }
             spriteBatch.End();
             base.Draw(gameTime);
@@ -272,7 +329,10 @@ namespace SchoolZenog
     enum Gamestate
     {
         start,
+        settings,
         play,
+        pause,
+        cutscene,
         end
     }
 }
