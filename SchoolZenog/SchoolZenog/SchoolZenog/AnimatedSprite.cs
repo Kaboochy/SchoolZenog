@@ -17,6 +17,8 @@ namespace SchoolZenog
         public int stop = 0, currentFrame = 0;
         public Animated currentAnime = Animated.idle, lastAnime = Animated.idle;
         public bool right = true;
+        public Color col = Color.White;
+        public Rectangle dest = new Rectangle();
 
         public void up()
         {
@@ -42,7 +44,7 @@ namespace SchoolZenog
             }
             return touch;
         }
-        public bool Hit(Rectangle dest, List<Rectangle> hitbox)
+        public bool Hit(List<Rectangle> hitbox)
         {
             bool touch = false;
             List<Rectangle> hitboxes = Retrive(dest);
@@ -258,6 +260,103 @@ namespace SchoolZenog
         }
         public void Draw(SpriteBatch sb, Rectangle dest, Color col)
         {
+            Console.WriteLine("dest =" + dest);
+            if (currentAnime == Animated.Enter)
+            {
+                anime.enter[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.idle)
+            {
+                anime.idle[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.walk)
+            {
+                anime.walk[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.run)
+            {
+                anime.run[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.jump)
+            {
+                anime.jump[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.fallingA)
+            {
+                anime.fallingA[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.fallingH)
+            {
+                anime.fallingH[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.fallingL)
+            {
+                anime.fallingL[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.fallingS)
+            {
+                anime.fallingS[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.recover)
+            {
+                anime.recover[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attack11)
+            {
+                anime.attack11[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attack12)
+            {
+                anime.attack12[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attack13)
+            {
+                anime.attack13[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attack21)
+            {
+                anime.attack21[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attack22)
+            {
+                anime.attack22[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attack23)
+            {
+                anime.attack23[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attackA1)
+            {
+                anime.attackA1[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attackA2)
+            {
+                anime.attackA2[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attackA3)
+            {
+                anime.attackA3[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.blockA)
+            {
+                anime.blockA[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.blockS)
+            {
+                anime.blockS[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.ult)
+            {
+                anime.ult[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.death)
+            {
+                anime.death[currentFrame].Draw(sb, dest, right, col);
+            }
+        }
+        public void Draw(SpriteBatch sb)
+        {
+            Console.WriteLine("dest =" + dest);
             if (currentAnime == Animated.Enter)
             {
                 anime.enter[currentFrame].Draw(sb, dest, right, col);

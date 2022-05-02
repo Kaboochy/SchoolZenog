@@ -43,12 +43,12 @@ namespace SchoolZenog
         public List<Rectangle> Retrive(Rectangle location, bool dic)
         {
             List<Rectangle> rects = new List<Rectangle>();
-            int a = location.Width / size;
+            float a = location.Width / size;
             if (dic)
             {
                 for (int i = 0; i < hitbox.Count; i++)
                 {
-                    rects.Add(new Rectangle(hitbox[i].X * a + location.X, hitbox[i].Y * a + location.Y, hitbox[i].Width * a, hitbox[i].Height * a));
+                    rects.Add(new Rectangle((int)(hitbox[i].X * a + location.X), (int)(hitbox[i].Y * a + location.Y), (int)(hitbox[i].Width * a), (int)(hitbox[i].Height * a)));
                 }
             }
             else
@@ -57,7 +57,7 @@ namespace SchoolZenog
                 hit = flip(hitbox);
                 for (int i = 0; i < hitbox.Count; i++)
                 {
-                    rects.Add(new Rectangle(hit[i].X * a + (int)location.X, hit[i].Y * a + (int)location.Y, hit[i].Width * a, hit[i].Height * a));
+                    rects.Add(new Rectangle((int)(hit[i].X * a + location.X), (int)(hit[i].Y * a + location.Y), (int)(hit[i].Width * a), (int)(hit[i].Height * a)));
                 }
             }
             return rects;

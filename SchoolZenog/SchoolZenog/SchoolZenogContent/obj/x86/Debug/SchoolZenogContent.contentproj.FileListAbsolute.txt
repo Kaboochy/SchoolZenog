@@ -1,3 +1,8 @@
 C:\Users\jacob\Source\Repos\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenogContent\obj\x86\Debug\SchoolZenogContent.contentprojResolveAssemblyReference.cache
 C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenogContent\obj\x86\Debug\SchoolZenogContent.contentprojAssemblyReference.cache
 C:\Users\victo\source\repos\SchoolZenog\SchoolZenog\SchoolZenogContent\obj\x86\Debug\SchoolZenogContent.contentproj.CoreCompileInputs.cache
+C:\Users\victo\Downloads\SchoolZenog\SchoolZenog\SchoolZenogContent\obj\x86\Debug\SchoolZenogContent.contentprojAssemblyReference.cache
+C:\Users\victo\Downloads\SchoolZenog\SchoolZenog\SchoolZenogContent\obj\x86\Debug\SchoolZenogContent.contentproj.CoreCompileInputs.cache
+D:\Github\Zenog\SchoolZenog\SchoolZenog\SchoolZenogContent\obj\x86\Debug\SchoolZenogContent.contentprojAssemblyReference.cache
+D:\Github\Zenog\SchoolZenog\SchoolZenog\SchoolZenogContent\obj\x86\Debug\SchoolZenogContent.contentproj.CoreCompileInputs.cache
+C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenogContent\obj\x86\Debug\SchoolZenogContent.contentprojResolveAssemblyReference.cache
