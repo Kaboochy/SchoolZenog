@@ -554,9 +554,6 @@ namespace SchoolZenog
                         else
                             x = 0;
                     }
-                    //DEALING DAMAGE
-                    int i = enemies.attack(zy.Retrive(destRect));
-
                     //COMBO LOGIC
                     if (mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released && zy.stop == 1)
                     {
@@ -606,6 +603,24 @@ namespace SchoolZenog
                         //if an enemy is defeated, add 50 to the score
                         scoreText = "Score: " + score;
                     }
+                    //DEALING DAMAGE
+                    if(frames>30)
+                    {
+                        int i = enemies.attack(zy.Retrive(destRect));
+                        if (i < 0)
+                        {
+                            zy.right = false;
+                            zy.stop = 4;
+                            zyHealth -= 300;
+                        }
+                        if (i > 0)
+                        {
+                            zy.right = true;
+                            zy.stop = 4;
+                            zyHealth -= 300;
+                        }
+                    }
+
                 }
                 if (zy.stop == 10 && gameState != Gamestate.end)
                 {

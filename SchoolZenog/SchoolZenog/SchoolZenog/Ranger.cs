@@ -269,6 +269,7 @@ namespace SchoolZenog
         }
         public void Update(int move)
         {
+            currentFrame = 0;
             if (isFired)
             {
                 if (!(move == 0))
