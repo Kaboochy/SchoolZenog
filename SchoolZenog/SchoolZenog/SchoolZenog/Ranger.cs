@@ -101,15 +101,21 @@ namespace SchoolZenog
                 }
             }
             //movement
-            if (right && stop == 0 && !(dest.X < 520 && dest.X > 240))
+            if (right && stop == 0 && !(dest.X < 1480 && dest.X > 1200))
             {
                 currentAnime = Animated.walk;
-                dest.X -= 3;
+                if (dest.X > 1480)
+                    dest.X -= 3;
+                else
+                    dest.X += 3;
             }
-            if (!right && stop == 0 && !(dest.X < 1480 && dest.X > 1200))
+            if (!right && stop == 0 && !(dest.X < 520 && dest.X > 240))
             {
                 currentAnime = Animated.walk;
-                dest.X += 3;
+                if (dest.X < 520)
+                    dest.X += 3;
+                else
+                    dest.X -= 3;
             }
             //attack
             if (stop == 0 && ((dest.X < 1480 && dest.X > 1200) || (dest.X < 520 && dest.X > 240)) && timer >= 55)
@@ -188,6 +194,13 @@ namespace SchoolZenog
         public void end()
         {
             isFired = false;
+        }
+        public new void Draw(SpriteBatch sb)
+        {
+            if (isFired)
+            {
+                anime.attack11[currentFrame].Draw(sb, dest, right, col);
+            }
         }
     }
 }

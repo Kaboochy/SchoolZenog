@@ -88,6 +88,7 @@ namespace SchoolZenog
             for (int i = 0; i < rangers.Count; i++)
             {
                 rangers[i].Draw(sb);
+                rangers[i].mis.Draw(sb);
             }
         }
     }

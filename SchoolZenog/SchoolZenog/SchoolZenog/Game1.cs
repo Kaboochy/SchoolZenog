@@ -705,8 +705,8 @@ namespace SchoolZenog
                 //HITBOX
                 zy.DrawHitbox(spriteBatch, destRect, whiteText);
                 //ZY
-                zy.Draw(spriteBatch, destRect, zyColor);
                 enemies.Draw(spriteBatch);
+                zy.Draw(spriteBatch, destRect, zyColor);
                 //SHIELD
                 if (zy.currentAnime.Equals(Animated.blockS) || zy.stop == 10)
                 {
