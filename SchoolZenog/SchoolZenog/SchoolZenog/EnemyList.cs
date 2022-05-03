@@ -16,7 +16,7 @@ namespace SchoolZenog
         static Random rng = new Random();
         public List<Ranger> rangers;
         int timer;
-        public int speed;
+        public int speed, numberKilled = 0;
         Texture2D whatever;
 
         public EnemyList(Texture2D something)
@@ -43,6 +43,7 @@ namespace SchoolZenog
                 {
                     rangers.RemoveAt(i);
                     i--;
+                    numberKilled++;
                 }
             }
             if (timer >= speed)
@@ -69,6 +70,7 @@ namespace SchoolZenog
                     {
                         a--;
                     }
+                    rangers[i].mis.end();
                 }
             }
             return a;

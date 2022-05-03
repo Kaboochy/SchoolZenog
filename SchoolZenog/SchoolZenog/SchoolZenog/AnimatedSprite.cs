@@ -260,7 +260,6 @@ namespace SchoolZenog
         }
         public void Draw(SpriteBatch sb, Rectangle dest, Color col)
         {
-            Console.WriteLine("dest =" + dest);
             if (currentAnime == Animated.Enter)
             {
                 anime.enter[currentFrame].Draw(sb, dest, right, col);
@@ -356,7 +355,6 @@ namespace SchoolZenog
         }
         public void Draw(SpriteBatch sb)
         {
-            Console.WriteLine("dest =" + dest);
             if (currentAnime == Animated.Enter)
             {
                 anime.enter[currentFrame].Draw(sb, dest, right, col);

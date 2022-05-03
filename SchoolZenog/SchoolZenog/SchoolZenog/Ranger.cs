@@ -13,7 +13,7 @@ namespace SchoolZenog
     class Ranger : AnimatedSprite
     {
         Rectangle green;
-        static Texture2D tex;
+        static Texture2D tex, gg;
         public int health = 100;
         int timer = 0;
         public Projectile mis;
@@ -57,14 +57,14 @@ namespace SchoolZenog
                 mis.anime.attack11.Add(new Animation(t, i, 4, 50, @"Content/Ranger/Ranger_Projectile.txt"));
             }
         }
-        public static void SetRTex(Texture2D t)
+        public static void SetRTex(Texture2D t, Texture2D g)
         {
             tex = t;
             Projectile.tex = t;
+            gg = g;
         }
         public void Update(Rectangle zDest, int move)
         {
-            Console.WriteLine("update");
             timer++;
             //idle
             if (stop == 0)
@@ -118,12 +118,12 @@ namespace SchoolZenog
                     dest.X -= 3;
             }
             //attack
-            if (stop == 0 && ((dest.X < 1480 && dest.X > 1200) || (dest.X < 520 && dest.X > 240)) && timer >= 55)
+            if (stop == 0 && ((dest.X < 1480 && dest.X > 1200) || (dest.X < 520 && dest.X > 240)) && timer >= 150)
             {
                 currentAnime = Animated.attack11;
                 stop = 1;
                 timer = 0;
-                mis.fire(right);
+                mis.fire(right, dest);
             }
             //frame update
             up();
@@ -131,13 +131,131 @@ namespace SchoolZenog
             {
                 stop = 0;
             }
-            if (timer >= 55)
+            if (timer >= 150)
             {
                 mis.end();
             }
             green = new Rectangle(dest.X, dest.Y + 15, ((dest.Width * health) / 100), 15);
             mis.Update(move);
             lastAnime = currentAnime;
+        }
+        public void Draw(SpriteBatch sb)
+        {
+            if (currentAnime == Animated.Enter)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.enter[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.idle)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.idle[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.walk)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.walk[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.run)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.run[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.jump)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.jump[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.fallingA)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.fallingA[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.fallingH)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.fallingH[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.fallingL)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.fallingL[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.fallingS)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.fallingS[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.recover)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.recover[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attack11)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.attack11[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attack12)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.attack12[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attack13)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.attack13[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attack21)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.attack21[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attack22)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.attack22[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attack23)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.attack23[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attackA1)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.attackA1[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attackA2)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.attackA2[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.attackA3)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.attackA3[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.blockA)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.blockA[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.blockS)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.blockS[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.ult)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.ult[currentFrame].Draw(sb, dest, right, col);
+            }
+            if (currentAnime == Animated.death)
+            {
+                sb.Draw(gg, green, Color.Green);
+                anime.death[currentFrame].Draw(sb, dest, right, col);
+            }
         }
     }
 
@@ -186,8 +304,9 @@ namespace SchoolZenog
                 dest = new Rectangle(0, 0, 150, 150);
             }
         }
-        public void fire(Boolean Right)
+        public void fire(Boolean Right, Rectangle rDest)
         {
+            dest = new Rectangle(rDest.X, rDest.Y + 30, 150, 150);
             isFired = true;
             right = Right;
         }

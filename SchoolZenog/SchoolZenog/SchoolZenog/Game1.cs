@@ -161,7 +161,7 @@ namespace SchoolZenog
 
             //JACOB
             //ENEMIES
-            Ranger.SetRTex(Content.Load<Texture2D>("Ranger_Sprite"));
+            Ranger.SetRTex(Content.Load<Texture2D>("Ranger_Sprite"), whiteText);
             enemies = new EnemyList(Content.Load<Texture2D>("Ranger_Sprite"));
             enemies.load();
             enemies.load();
@@ -555,6 +555,7 @@ namespace SchoolZenog
                             x = 0;
                     }
                     //DEALING DAMAGE
+                    int i = enemies.attack(zy.Retrive(destRect));
 
                     //COMBO LOGIC
                     if (mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released && zy.stop == 1)
@@ -623,6 +624,21 @@ namespace SchoolZenog
                 {
                     zy.Update(kb, mouse, destRect);
                     enemies.Update(destRect, move);
+                    if (zy.stop == 1)
+                    {
+                        if (zy.combo == 0 && zy.currentFrame == 2)
+                        {
+                            enemies.attacked(zy.Retrive(destRect), 30);
+                        }
+                        if (zy.combo == 1 && zy.currentFrame == 1)
+                        {
+                            enemies.attacked(zy.Retrive(destRect), 70);
+                        }
+                        if (zy.combo == 2 && zy.currentFrame == 2)
+                        {
+                            enemies.attacked(zy.Retrive(destRect), 100);
+                        }
+                    }
                 }
             }
             //GAME OVER LOGIC
@@ -726,7 +742,7 @@ namespace SchoolZenog
                 spriteBatch.Draw(zyBlueText, zyBlueRect, new Rectangle(247,0,1920,1080), Color.White);
                 spriteBatch.Draw(hudGray, new Rectangle(0, 0, 1920, 1080), Color.White);
                 spriteBatch.Draw(hudText, new Rectangle(0, 0, 1920, 1080), Color.White);
-                spriteBatch.DrawString(tinyFont, enemiesDefeatedText, new Vector2(1500, 50), Color.Black);
+                spriteBatch.DrawString(tinyFont, "Takedowns: " + enemies.numberKilled, new Vector2(1500, 50), Color.Black);
                 spriteBatch.DrawString(tinyFont, scoreText, new Vector2(1555, 150), Color.Black);
                 spriteBatch.DrawString(Font1, timeText, new Vector2(1300, 50), Color.Black);
                 //GAME OVER DARKNESS
@@ -785,7 +801,7 @@ namespace SchoolZenog
                     spriteBatch.Draw(art, new Rectangle(0, 0, 1920, 1080), new Color(100, 100, 150, 1));
                     spriteBatch.Draw(whiteText, new Rectangle(400, 400, 1200, 500), startColor);
                     //LOGO
-                    spriteBatch.DrawString(zenogFont, zenogText, new Vector2(690, 80), Color.White);
+                    spriteBatch.Draw(logo, new Rectangle(690, 10, 500, 500), Color.White);
                 }
                 //VOLUME BAR
                 spriteBatch.DrawString(Font1, settingsText, new Vector2(810, 500), Color.White);
