@@ -39,13 +39,13 @@ namespace SchoolZenog
         {
             for (int i = 0; i < rangers.Count; i++)
             {
-                if (rangers[i].health >= 0)
+                if (rangers[i].health <= 0)
                 {
                     rangers.RemoveAt(i);
                     i--;
                 }
             }
-            if (timer <= speed)
+            if (timer >= speed)
             {
                 load();
             }
@@ -85,7 +85,7 @@ namespace SchoolZenog
         }
         public void Draw(SpriteBatch sb)
         {
-            for (int i = 0; i < rangers.Count - 1; i++)
+            for (int i = 0; i < rangers.Count; i++)
             {
                 rangers[i].Draw(sb);
             }

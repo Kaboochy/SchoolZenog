@@ -22,15 +22,15 @@ namespace SchoolZenog
         {
             if (a == 0)
             {
-                dest = new Rectangle(2880, 820, 200, 200);
+                dest = new Rectangle(2100, 820, 200, 200);
             }
             else if (a == 1)
             {
-                dest = new Rectangle(-960, 820, 200, 200);
+                dest = new Rectangle(-380, 820, 200, 200);
             }
             else
             {
-                dest = new Rectangle(2880, 820, 200, 200);
+                dest = new Rectangle(2100, 820, 200, 200);
             }
             green = new Rectangle(dest.X, dest.Y + 15, ((dest.Width * health) / 100), 15);
             mis = new Projectile();
@@ -74,11 +74,11 @@ namespace SchoolZenog
             //side
             if (zDest.X < dest.X)
             {
-                right = false;
+                right = true;
             }
             if (zDest.X > dest.X)
             {
-                right = true;
+                right = false;
             }
             //screen movement
             if (!(move == 0))
@@ -101,15 +101,15 @@ namespace SchoolZenog
                 }
             }
             //movement
-            if (!right && stop == 0 && !(dest.X < 520 && dest.X > 240))
-            {
-                currentAnime = Animated.walk;
-                dest.X += 3;
-            }
-            if (right && stop == 0 && !(dest.X < 1480 && dest.X > 1200))
+            if (right && stop == 0 && !(dest.X < 520 && dest.X > 240))
             {
                 currentAnime = Animated.walk;
                 dest.X -= 3;
+            }
+            if (!right && stop == 0 && !(dest.X < 1480 && dest.X > 1200))
+            {
+                currentAnime = Animated.walk;
+                dest.X += 3;
             }
             //attack
             if (stop == 0 && ((dest.X < 1480 && dest.X > 1200) || (dest.X < 520 && dest.X > 240)) && timer >= 55)

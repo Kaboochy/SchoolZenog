@@ -501,7 +501,7 @@ namespace SchoolZenog
                         move = 1;
                     if (zy.currentAnime == Animated.idle)
                         move = 0;
-                    if (zy.right)
+                    if (!zy.right)
                         move *= -1;
                     //FALLING LOGIC
                     if (zy.stop == 4 && destRect.Y < 750)

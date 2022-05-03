@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Rectangle.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Rectangle.xnb</Output>
+      <Time>2022-05-02T19:27:28.7855862-05:00</Time>
     </Item>
     <Item>
       <Source>Start_Screen.jpg</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Start_Screen.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Start_Screen.xnb</Output>
+      <Time>2022-05-02T19:27:28.870586-05:00</Time>
     </Item>
     <Item>
       <Source>TestBackground.jpg</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\TestBackground.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\TestBackground.xnb</Output>
+      <Time>2022-05-02T19:27:28.873086-05:00</Time>
     </Item>
     <Item>
       <Source>White_Square.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\White_Square.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\White_Square.xnb</Output>
+      <Time>2022-05-02T19:27:29.2219713-05:00</Time>
     </Item>
     <Item>
       <Source>Zy_Sprite.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Zy_Sprite.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Zy_Sprite.xnb</Output>
+      <Time>2022-05-02T19:27:29.2579723-05:00</Time>
     </Item>
     <Item>
       <Source>Bubble.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Bubble.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Bubble.xnb</Output>
+      <Time>2022-05-02T19:27:28.6825872-05:00</Time>
     </Item>
     <Item>
       <Source>zenogCutscene1.jpg</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogCutscene1.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogCutscene1.xnb</Output>
+      <Time>2022-05-02T19:27:29.226971-05:00</Time>
     </Item>
     <Item>
       <Source>zenogCutscene2.jpg</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogCutscene2.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogCutscene2.xnb</Output>
+      <Time>2022-05-02T19:27:29.231971-05:00</Time>
     </Item>
     <Item>
       <Source>zenogHud.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogHud.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogHud.xnb</Output>
+      <Time>2022-05-02T19:27:29.2349712-05:00</Time>
     </Item>
     <Item>
       <Source>zenogHudHLarge.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogHudHLarge.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogHudHLarge.xnb</Output>
+      <Time>2022-05-02T19:27:29.2379713-05:00</Time>
     </Item>
     <Item>
       <Source>zenogHudB.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogHudB.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogHudB.xnb</Output>
+      <Time>2022-05-02T19:27:29.2359711-05:00</Time>
     </Item>
     <Item>
       <Source>zenogHudG.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogHudG.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogHudG.xnb</Output>
+      <Time>2022-05-02T19:27:29.2369712-05:00</Time>
     </Item>
     <Item>
       <Source>finalBackground2.jpg</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\finalBackground2.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\finalBackground2.xnb</Output>
+      <Time>2022-05-02T19:27:28.6860863-05:00</Time>
     </Item>
     <Item>
       <Source>zenogHudHSmall.png</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogHudHSmall.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogHudHSmall.xnb</Output>
+      <Time>2022-05-02T19:27:29.2384713-05:00</Time>
     </Item>
     <Item>
       <Source>Ranger_Sprite.png</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Ranger_Sprite.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Ranger_Sprite.xnb</Output>
+      <Time>2022-05-02T19:27:28.784586-05:00</Time>
     </Item>
     <Item>
       <Source>logo.png</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\logo.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\logo.xnb</Output>
+      <Time>2022-05-02T19:27:28.6870887-05:00</Time>
     </Item>
     <Item>
       <Source>Ranger\Ranger_Sprite.png</Source>
@@ -151,8 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Ranger\Ranger_Sprite.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Ranger\Ranger_Sprite.xnb</Output>
+      <Time>2022-05-02T19:27:28.7825861-05:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont1.spritefont</Source>
@@ -160,8 +160,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2022-05-02T19:27:28.8295861-05:00</Time>
     </Item>
     <Item>
       <Source>zenogFont.spritefont</Source>
@@ -169,8 +169,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogFont.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\zenogFont.xnb</Output>
+      <Time>2022-05-02T19:27:29.2334735-05:00</Time>
     </Item>
     <Item>
       <Source>tinyFont.spritefont</Source>
@@ -178,8 +178,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\tinyFont.xnb</Output>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\tinyFont.xnb</Output>
+      <Time>2022-05-02T19:27:29.220971-05:00</Time>
     </Item>
     <Item>
       <Source>Sarabande_Full_Mix.mp3</Source>
@@ -187,9 +187,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Sarabande_Full_Mix.xnb</Output>
-      <Extra>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Sarabande_Full_Mix.wma</Extra>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Sarabande_Full_Mix.xnb</Output>
+      <Extra>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Sarabande_Full_Mix.wma</Extra>
+      <Time>2022-05-02T19:27:28.8265862-05:00</Time>
     </Item>
     <Item>
       <Source>Odd_Exploitation_Synth_Stem.mp3</Source>
@@ -197,9 +197,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Odd_Exploitation_Synth_Stem.xnb</Output>
-      <Extra>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Odd_Exploitation_Synth_Stem.wma</Extra>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Odd_Exploitation_Synth_Stem.xnb</Output>
+      <Extra>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Odd_Exploitation_Synth_Stem.wma</Extra>
+      <Time>2022-05-02T19:27:28.7480858-05:00</Time>
     </Item>
     <Item>
       <Source>Odd_Exploitation_Full_Mix.mp3</Source>
@@ -207,9 +207,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Odd_Exploitation_Full_Mix.xnb</Output>
-      <Extra>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Odd_Exploitation_Full_Mix.wma</Extra>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Odd_Exploitation_Full_Mix.xnb</Output>
+      <Extra>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\Odd_Exploitation_Full_Mix.wma</Extra>
+      <Time>2022-05-02T19:27:28.7205871-05:00</Time>
     </Item>
     <Item>
       <Source>BackAlleyBusiness.mp3</Source>
@@ -217,9 +217,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\BackAlleyBusiness.xnb</Output>
-      <Extra>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\BackAlleyBusiness.wma</Extra>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\BackAlleyBusiness.xnb</Output>
+      <Extra>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\BackAlleyBusiness.wma</Extra>
+      <Time>2022-05-02T19:27:28.6750862-05:00</Time>
     </Item>
     <Item>
       <Source>PaintTheTownBlack.mp3</Source>
@@ -227,9 +227,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\PaintTheTownBlack.xnb</Output>
-      <Extra>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\PaintTheTownBlack.wma</Extra>
-      <Time>2022-05-02T09:14:40-05:00</Time>
+      <Output>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\PaintTheTownBlack.xnb</Output>
+      <Extra>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\PaintTheTownBlack.wma</Extra>
+      <Time>2022-05-02T19:27:28.7780867-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -238,10 +238,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenogContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\226778\Desktop\VideoGameProgramming-Victor\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenogContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\jacob\Source\Repos\SchoolZenog3\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -269,8 +269,8 @@
         <Value>2011-09-01T16:22:30-05:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2019-06-27T10:17:09.1698641-05:00</Value>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2022-01-18T07:40:46.797726-06:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
