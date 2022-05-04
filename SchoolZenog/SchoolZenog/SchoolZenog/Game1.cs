@@ -23,15 +23,15 @@ namespace SchoolZenog
         Texture2D zyText, backgroundText, blackText, whiteText, art, cutscene1, cutscene2, bubbleText,
             hudText, zyGreenText, zyBlueText, hudGray, zyGreenRText, logo;
         bool paused, settings;
-        int frames, zyHealth, zyShield, introTimer, r, g, b, d, scriptNum, 
+        int frames, zyHealth, zyShield, introTimer, r, g, b, d, scriptNum,
             enemiesDefeated, score, endScreenBrightness, quitTimer, move;
-        double backX,  x;
+        double backX, x;
         string startText, zenogText, settingsText, quitText, volumeText, backText,
-            skipText, introText, scriptText, cutsceneText, enemiesDefeatedText, scoreText, 
+            skipText, introText, scriptText, cutsceneText, enemiesDefeatedText, scoreText,
             timeText, finalScript, finalText;
         float volume, a;
         Vector2 introTextVect;
-        Color zyColor, startColor, settingsColor, quitColor, introTextColor, 
+        Color zyColor, startColor, settingsColor, quitColor, introTextColor,
             cutsceneColor, cutsceneTextColor, nextColor, endScreenColor;
         Gamestate gameState, oldState;
         SpriteFont Font1, zenogFont, tinyFont;
@@ -116,7 +116,7 @@ namespace SchoolZenog
             endScreenBrightness = 0;
             finalScript = "";
             quitTimer = 0;
-            endScreenColor = new Color(0,0,0, endScreenBrightness);
+            endScreenColor = new Color(0, 0, 0, endScreenBrightness);
             oldmouse = Mouse.GetState();
             gameState = Gamestate.home;
             base.Initialize();
@@ -163,13 +163,6 @@ namespace SchoolZenog
             //ENEMIES
             Ranger.SetRTex(Content.Load<Texture2D>("Ranger_Sprite"), whiteText);
             enemies = new EnemyList(Content.Load<Texture2D>("Ranger_Sprite"));
-            enemies.load();
-            enemies.load();
-            enemies.load();
-            enemies.load();
-            enemies.load();
-            enemies.load();
-            enemies.load();
             enemies.load();
         }
         /* //UNLOAD CONTENT WAS NEVER USED AND I AM NOT STARTING NOW
@@ -313,15 +306,15 @@ namespace SchoolZenog
                 //ACTUAL CUTSCENES LOGIC
                 if (b > 0)
                 {
-                    if(b==1 && scriptNum == 1)
+                    if (b == 1 && scriptNum == 1)
                         scriptText = " Zy: Have any enemies reached the walls yet?";
-                    if(b==2 && scriptNum == 1)
+                    if (b == 2 && scriptNum == 1)
                         scriptText = " Nomi: Now we just have to wait and \n       take them down as they come out";
                     //TRANSITION LOGIC
                     if (g == scriptText.Length)
                         nextColor = Color.White;
                     else if (scriptNum == 7 || scriptNum == 13)
-                        nextColor = new Color(0,0,0,0);
+                        nextColor = new Color(0, 0, 0, 0);
                     else
                         nextColor = Color.Gray;
                     if (introTimer > 2100 && d < 255 && introTimer < 2400)
@@ -367,7 +360,7 @@ namespace SchoolZenog
                             g++;
                         }
                     }
-                    if(b == 1)
+                    if (b == 1)
                     {
                         if (scriptNum == 3)
                             scriptText = " Nomi: Ryan said that they have not left \n       the portal yet so we are ahead of schedule";
@@ -398,7 +391,7 @@ namespace SchoolZenog
                             scriptText = " Zy: Then we will be the first";
                         if (scriptNum == 9)
                             scriptText = " (Zy begins to run towards the portal)";
-                        if(scriptNum == 11)
+                        if (scriptNum == 11)
                             scriptText = " Nomi: Those aren't the orders!";
                         if (scriptNum == 13)
                         {
@@ -490,6 +483,11 @@ namespace SchoolZenog
                 if (!paused)
                 {
                     frames++;
+                    //ENEMIES LOADING IN
+                    if(frames%240==0)
+                    {
+                        enemies.load();
+                    }
                     //IsMouseVisible = false; //DOESNT WORK WITH GREATER THAN 60 FPS
                     //STOP 0 = Movement and idle
                     //STOP 1 = Attacking
@@ -569,12 +567,12 @@ namespace SchoolZenog
                     {
                         zyShield -= 20;
                         //blueX +=3;
-                    } 
+                    }
                     if (!zy.currentAnime.Equals(Animated.blockS) && zyShield < 1920)
                     {
                         zyShield += 2;
                         //blueX -= (int).3;
-                    }  
+                    }
                     if (zyShield <= 0)
                         zy.shield = false;
                     //ULTIMATE
@@ -604,23 +602,19 @@ namespace SchoolZenog
                         scoreText = "Score: " + score;
                     }
                     //DEALING DAMAGE
-                    if(frames>30)
+                    int i = enemies.attack(zy.Retrive(destRect));
+                    if (i < 0)
                     {
-                        int i = enemies.attack(zy.Retrive(destRect));
-                        if (i < 0)
-                        {
-                            zy.right = false;
-                            zy.stop = 4;
-                            zyHealth -= 300;
-                        }
-                        if (i > 0)
-                        {
-                            zy.right = true;
-                            zy.stop = 4;
-                            zyHealth -= 300;
-                        }
+                        zy.right = false;
+                        zy.stop = 4;
+                        zyHealth -= 300;
                     }
-
+                    if (i > 0)
+                    {
+                        zy.right = true;
+                        zy.stop = 4;
+                        zyHealth -= 300;
+                    }
                 }
                 if (zy.stop == 10 && gameState != Gamestate.end)
                 {
@@ -635,7 +629,7 @@ namespace SchoolZenog
                     }
 
                 }
-                if (frames % 7 == 0)
+                if (frames % 7 == 0 && paused == false)
                 {
                     zy.Update(kb, mouse, destRect);
                     enemies.Update(destRect, move);
@@ -666,13 +660,13 @@ namespace SchoolZenog
                 {
                     finalScript = " Zy woke up outside the portal with Nomi kneeling by his side\n";
                     g = 0;
-                }  
+                }
                 if (quitTimer > 100 && quitTimer % 2 == 0 && g < finalScript.Length && quitTimer < 2000)
                 {
                     finalText = finalText + char.ToString(finalScript[g]);
                     g++;
                 }
-                if(quitTimer > 300)
+                if (quitTimer > 300)
                     finalScript = " She told him that he was carried out by another cloaked man\n";
                 if (quitTimer > 600)
                     finalScript = " The man told her before he left that they should not be fighting\n";
@@ -694,12 +688,12 @@ namespace SchoolZenog
                     {
                         Exit(); //CHANGE TO --> gameState = Gamestate.home; <-- if you want to return to menu instead of close game
                     }
-                } 
+                }
                 else
                 {
-                    quitColor = new Color(0,0,0,0);
+                    quitColor = new Color(0, 0, 0, 0);
                 }
-                    
+
             }
             //JACOB
             //H THINGY
@@ -746,7 +740,7 @@ namespace SchoolZenog
                     {
                         bubbleRect.Y = 820;
                     }
-                        
+
                 }
                 //JACOB
                 //ENEMIES
@@ -754,14 +748,14 @@ namespace SchoolZenog
                 //HUD
                 spriteBatch.Draw(zyGreenRText, new Rectangle(221, 0, 1920, 1080), new Rectangle(221, 0, 1920, 1080), Color.White);
                 spriteBatch.Draw(zyGreenText, zyGreenRect, new Rectangle(260, 0, 1920, 1080), Color.White);
-                spriteBatch.Draw(zyBlueText, zyBlueRect, new Rectangle(247,0,1920,1080), Color.White);
+                spriteBatch.Draw(zyBlueText, zyBlueRect, new Rectangle(247, 0, 1920, 1080), Color.White);
                 spriteBatch.Draw(hudGray, new Rectangle(0, 0, 1920, 1080), Color.White);
                 spriteBatch.Draw(hudText, new Rectangle(0, 0, 1920, 1080), Color.White);
                 spriteBatch.DrawString(tinyFont, "Takedowns: " + enemies.numberKilled, new Vector2(1500, 50), Color.Black);
                 spriteBatch.DrawString(tinyFont, scoreText, new Vector2(1555, 150), Color.Black);
                 spriteBatch.DrawString(Font1, timeText, new Vector2(1300, 50), Color.Black);
                 //GAME OVER DARKNESS
-                if(zy.stop == 10)
+                if (zy.stop == 10)
                 {
                     spriteBatch.Draw(whiteText, new Rectangle(0, 0, 1920, 1080), endScreenColor);
                 }
@@ -805,7 +799,7 @@ namespace SchoolZenog
                 spriteBatch.Draw(blackText, quitRect, Color.White);
                 //LOGO
                 //spriteBatch.DrawString(zenogFont, zenogText, new Vector2(690, 80), Color.White);
-                spriteBatch.Draw(logo, new Rectangle(690,10,500,500), Color.White);
+                spriteBatch.Draw(logo, new Rectangle(690, 10, 500, 500), Color.White);
             }
             //SETTINGS
             if (settings)
@@ -840,9 +834,9 @@ namespace SchoolZenog
                 //SECOND PART
                 if (b > 0)
                 {
-                    if(b==1)
+                    if (b == 1)
                         spriteBatch.Draw(cutscene1, new Rectangle(0, 0, 1920, 1080), cutsceneColor);
-                    if(b==2)
+                    if (b == 2)
                         spriteBatch.Draw(cutscene2, new Rectangle(0, 0, 1920, 1080), cutsceneColor);
                     spriteBatch.Draw(whiteText, cutsceneTextRect, new Color(0, 0, 0, d - 100));
                     spriteBatch.DrawString(tinyFont, cutsceneText, new Vector2(100, 800), cutsceneTextColor);
@@ -851,7 +845,7 @@ namespace SchoolZenog
                 }
             }
             //GAME OVER
-            if(gameState == Gamestate.end)
+            if (gameState == Gamestate.end)
             {
                 //FINAL TEXT
                 spriteBatch.DrawString(tinyFont, finalText, new Vector2(50, 100), Color.White);

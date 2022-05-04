@@ -15,7 +15,7 @@ namespace SchoolZenog
         Rectangle green;
         static Texture2D tex, gg;
         public int health = 100;
-        int timer = 0;
+        int timer = 150;
         public Projectile mis;
 
         public Ranger(int a, Texture2D t)
@@ -85,19 +85,19 @@ namespace SchoolZenog
             {
                 if (move == -2)
                 {
-                    dest.X += 5;
+                    dest.X += 17;
                 }
                 if (move == -1)
                 {
-                    dest.X += 2;
+                    dest.X += 5;
                 }
                 if (move == 1)
                 {
-                    dest.X -= 2;
+                    dest.X -= 5;
                 }
                 if (move == 2)
                 {
-                    dest.X -= 5;
+                    dest.X -= 17;
                 }
             }
             //movement
@@ -266,6 +266,7 @@ namespace SchoolZenog
         public Projectile()
         {
             dest = new Rectangle(0, 0, 150, 150);
+            currentAnime = Animated.attack11;
         }
         public void Update(int move)
         {
@@ -276,28 +277,28 @@ namespace SchoolZenog
                 {
                     if (move == -2)
                     {
-                        dest.X += 5;
+                        dest.X += 17;
                     }
                     if (move == -1)
                     {
-                        dest.X += 2;
+                        dest.X += 5;
                     }
                     if (move == 1)
                     {
-                        dest.X -= 2;
+                        dest.X -= 5;
                     }
                     if (move == 2)
                     {
-                        dest.X -= 5;
+                        dest.X -= 17;
                     }
                 }
                 if (right)
                 {
-                    dest.X -= 10;
+                    dest.X -= 45;
                 }
                 else
                 {
-                    dest.X += 10;
+                    dest.X += 45;
                 }
             }
             else
@@ -314,6 +315,7 @@ namespace SchoolZenog
         public void end()
         {
             isFired = false;
+            dest = new Rectangle(0, 0, 150, 150);
         }
         public new void Draw(SpriteBatch sb)
         {
