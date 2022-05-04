@@ -72,11 +72,11 @@ namespace SchoolZenog
                 currentAnime = Animated.idle;
             }
             //side
-            if (zDest.X < dest.X)
+            if (zDest.X-10 < dest.X)
             {
                 right = true;
             }
-            if (zDest.X > dest.X)
+            if (zDest.X-10 > dest.X)
             {
                 right = false;
             }
@@ -85,19 +85,19 @@ namespace SchoolZenog
             {
                 if (move == -2)
                 {
-                    dest.X += 17;
+                    dest.X += 34;
                 }
                 if (move == -1)
                 {
-                    dest.X += 5;
+                    dest.X += 10;
                 }
                 if (move == 1)
                 {
-                    dest.X -= 5;
+                    dest.X -= 10;
                 }
                 if (move == 2)
                 {
-                    dest.X -= 17;
+                    dest.X -= 34;
                 }
             }
             //movement
@@ -105,17 +105,17 @@ namespace SchoolZenog
             {
                 currentAnime = Animated.walk;
                 if (dest.X > 1480)
-                    dest.X -= 3;
+                    dest.X -= 6;
                 else
-                    dest.X += 3;
+                    dest.X += 2;
             }
             if (!right && stop == 0 && !(dest.X < 520 && dest.X > 240))
             {
                 currentAnime = Animated.walk;
                 if (dest.X < 520)
-                    dest.X += 3;
+                    dest.X += 6;
                 else
-                    dest.X -= 3;
+                    dest.X -= 2;
             }
             //attack
             if (stop == 0 && ((dest.X < 1480 && dest.X > 1200) || (dest.X < 520 && dest.X > 240)) && timer >= 150)
@@ -277,19 +277,19 @@ namespace SchoolZenog
                 {
                     if (move == -2)
                     {
-                        dest.X += 17;
+                        dest.X += 34;
                     }
                     if (move == -1)
                     {
-                        dest.X += 5;
+                        dest.X += 10;
                     }
                     if (move == 1)
                     {
-                        dest.X -= 5;
+                        dest.X -= 10;
                     }
                     if (move == 2)
                     {
-                        dest.X -= 17;
+                        dest.X -= 34;
                     }
                 }
                 if (right)

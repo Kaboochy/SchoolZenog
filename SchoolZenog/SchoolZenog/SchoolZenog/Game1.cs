@@ -35,7 +35,7 @@ namespace SchoolZenog
             cutsceneColor, cutsceneTextColor, nextColor, endScreenColor;
         Gamestate gameState, oldState;
         SpriteFont Font1, zenogFont, tinyFont;
-        Song homeMusic, introMusic, gameMusic;
+        Song homeMusic, introMusic, gameMusic, a21, a22, a23, d1, d2, d3, runSound, walkingSound;
         Zy zy;
         //JACOB
         //ENEMIES
@@ -150,6 +150,14 @@ namespace SchoolZenog
             MediaPlayer.Volume = volume;
 
             //SOUND EFFECTS
+            a21 = Content.Load<Song>("ZyAttack21");
+            a22 = Content.Load<Song>("ZyAttack22");
+            a23 = Content.Load<Song>("ZyAttack23");
+            d1 = Content.Load<Song>("ZyDamage1");
+            d2 = Content.Load<Song>("ZyDamage2");
+            d3 = Content.Load<Song>("ZyDamage3");
+            runSound = Content.Load<Song>("ZyRunning");
+            walkingSound = Content.Load<Song>("ZyWalking");
 
             //FONTS
             Font1 = Content.Load<SpriteFont>("SpriteFont1");
@@ -519,11 +527,11 @@ namespace SchoolZenog
                             destRect.X = 800;
                             if (kb.IsKeyDown(Keys.LeftShift))
                             {
-                                backX += 5; //old = 1.5
+                                backX += 10; //old 5
                             }
                             else
                             {
-                                backX += 2; //old = .7
+                                backX += 4; //old 2
                             }
                         }
                         //LEFT
@@ -534,11 +542,11 @@ namespace SchoolZenog
                             destRect.X = 710;
                             if (kb.IsKeyDown(Keys.LeftShift))
                             {
-                                backX -= 5;
+                                backX -= 10;
                             }
                             else
                             {
-                                backX -= 2;
+                                backX -= 4;
                             }
                         }
                         //JUMPING
@@ -591,14 +599,7 @@ namespace SchoolZenog
                     {
                         //HUD UPDATES
                         timeText = "" + frames / 60;
-                        if (frames % 600 == 0 && frames > 599)
-                        {
-                            if (zyHealth == 1920)
-                                score += 50;
-                            else
-                                score += 10;
-                        }
-                        //if an enemy is defeated, add 50 to the score
+                        score = (enemies.numberKilled*25)+((frames/60)*2);
                         scoreText = "Score: " + score;
                     }
                     //DEALING DAMAGE
@@ -607,14 +608,15 @@ namespace SchoolZenog
                     {
                         zy.right = false;
                         zy.stop = 4;
-                        zyHealth -= 300;
+                        zyHealth -= 600;
                     }
                     if (i > 0)
                     {
                         zy.right = true;
                         zy.stop = 4;
-                        zyHealth -= 300;
+                        zyHealth -= 600;
                     }
+                //GAMEOVER GAMESTATE
                 }
                 if (zy.stop == 10 && gameState != Gamestate.end)
                 {
@@ -629,10 +631,12 @@ namespace SchoolZenog
                     }
 
                 }
+                //UPDATE STUFF
                 if (frames % 7 == 0 && paused == false)
                 {
                     zy.Update(kb, mouse, destRect);
                     enemies.Update(destRect, move);
+                    //ACTUAL DAMAGE FRAME LOGIC
                     if (zy.stop == 1)
                     {
                         if (zy.combo == 0 && zy.currentFrame == 2)
@@ -647,6 +651,10 @@ namespace SchoolZenog
                         {
                             enemies.attacked(zy.Retrive(destRect), 100);
                         }
+                    }
+                    if(zy.stop == 5 && zy.currentFrame == 6)
+                    {
+                        enemies.attacked(zy.Retrive(destRect), 100);
                     }
                 }
             }
