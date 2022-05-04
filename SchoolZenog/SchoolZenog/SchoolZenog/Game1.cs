@@ -736,7 +736,7 @@ namespace SchoolZenog
                 //BACKGROUND
                 spriteBatch.Draw(backgroundText, backgroundDestRect, backgroundSourceRect, Color.White);
                 //HITBOX
-                zy.DrawHitbox(spriteBatch, destRect, whiteText);
+                //zy.DrawHitbox(spriteBatch, destRect, whiteText);
                 //ZY
                 enemies.Draw(spriteBatch);
                 zy.Draw(spriteBatch, destRect, zyColor);
