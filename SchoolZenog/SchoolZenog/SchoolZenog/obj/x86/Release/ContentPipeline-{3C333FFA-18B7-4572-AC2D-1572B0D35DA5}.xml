@@ -311,6 +311,15 @@
       <Extra>D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Release\Content\ZyWalking.wma</Extra>
       <Time>2022-05-04T17:28:11.0200098-05:00</Time>
     </Item>
+    <Item>
+      <Source>keyboard.png</Source>
+      <Name>keyboard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Release\Content\keyboard.xnb</Output>
+      <Time>2022-05-04T19:44:20.7693076-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{3C333FFA-18B7-4572-AC2D-1572B0D35DA5}</ContentProjectGUID>

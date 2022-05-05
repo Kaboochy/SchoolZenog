@@ -94,3 +94,4 @@ D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\obj\x86\Release\School
 D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\obj\x86\Release\SchoolZenog.exe
 D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\obj\x86\Release\SchoolZenog.pdb
 D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\obj\x86\Release\SchoolZenog.csprojAssemblyReference.cache
+D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Release\Content\keyboard.xnb
