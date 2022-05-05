@@ -506,3 +506,8 @@ D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\
 D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\ZyDamage3.wma
 D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\ZyRunning.wma
 D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\ZyWalking.wma
+D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\SchoolZenog.exe.manifest
+D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\SchoolZenog.application
+D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\obj\x86\Debug\SchoolZenog.exe.manifest
+D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\obj\x86\Debug\SchoolZenog.application
+D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Debug\Content\keyboard.xnb

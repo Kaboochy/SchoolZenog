@@ -21,7 +21,7 @@ namespace SchoolZenog
             startRect, settingsRect, quitRect, mouseRect,
             volumeBar, volumeSlider, backRect, skipRect, bubbleRect, cutsceneTextRect, zyGreenRect, zyBlueRect;
         Texture2D zyText, backgroundText, blackText, whiteText, art, cutscene1, cutscene2, bubbleText,
-            hudText, zyGreenText, zyBlueText, hudGray, zyGreenRText, logo;
+            hudText, zyGreenText, zyBlueText, hudGray, zyGreenRText, logo, keybo;
         bool paused, settings;
         int frames, zyHealth, zyShield, introTimer, r, g, b, d, scriptNum,
             enemiesDefeated, score, endScreenBrightness, quitTimer, move;
@@ -140,6 +140,7 @@ namespace SchoolZenog
             hudGray = Content.Load<Texture2D>("zenogHudG");
             hudText = Content.Load<Texture2D>("zenogHud");
             logo = Content.Load<Texture2D>("logo");
+            keybo = Content.Load<Texture2D>("keyboard");
 
             //MUSIC
             homeMusic = Content.Load<Song>("PaintTheTownBlack"); //OLD ("Sarabande_Full_Mix"); 
@@ -819,6 +820,11 @@ namespace SchoolZenog
                     spriteBatch.Draw(whiteText, new Rectangle(400, 400, 1200, 500), startColor);
                     //LOGO
                     spriteBatch.Draw(logo, new Rectangle(690, 10, 500, 500), Color.White);
+                }
+                if(gameState == Gamestate.play)
+                {
+                    //KEYBINDS
+                    spriteBatch.Draw(keybo, new Rectangle(1250, 500, 585,368), Color.White);
                 }
                 //VOLUME BAR
                 spriteBatch.DrawString(Font1, settingsText, new Vector2(810, 500), Color.White);

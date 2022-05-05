@@ -1,0 +1,2 @@
+D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenogContent\obj\x86\Release\SchoolZenogContent.contentproj.CoreCompileInputs.cache
+D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenogContent\obj\x86\Release\SchoolZenogContent.contentprojAssemblyReference.cache
