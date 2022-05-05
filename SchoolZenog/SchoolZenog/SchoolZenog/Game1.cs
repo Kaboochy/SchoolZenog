@@ -21,7 +21,7 @@ namespace SchoolZenog
             startRect, settingsRect, quitRect, mouseRect,
             volumeBar, volumeSlider, backRect, skipRect, bubbleRect, cutsceneTextRect, zyGreenRect, zyBlueRect;
         Texture2D zyText, backgroundText, blackText, whiteText, art, cutscene1, cutscene2, bubbleText,
-            hudText, zyGreenText, zyBlueText, hudGray, zyGreenRText, logo, keybo;
+            hudText, zyGreenText, zyBlueText, hudGray, zyGreenRText, logo, keybo, homeTexture;
         bool paused, settings;
         int frames, zyHealth, zyShield, introTimer, r, g, b, d, scriptNum,
             enemiesDefeated, score, endScreenBrightness, quitTimer, move;
@@ -141,6 +141,7 @@ namespace SchoolZenog
             hudText = Content.Load<Texture2D>("zenogHud");
             logo = Content.Load<Texture2D>("logo");
             keybo = Content.Load<Texture2D>("keyboard");
+            homeTexture = Content.Load<Texture2D>("homescreen");
 
             //MUSIC
             homeMusic = Content.Load<Song>("PaintTheTownBlack"); //OLD ("Sarabande_Full_Mix"); 
@@ -218,7 +219,12 @@ namespace SchoolZenog
                     startColor = new Color(100, 100, 100, 1);
                 if (mouseRect.Intersects(startRect) && mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released)
                 {
-                    gameState = Gamestate.play; //CHANGE THIS TO CUTSCENE LATER BUT THIS IS JUST FOR TESTING AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+                    gameState = Gamestate.cutscene; //CHANGE THIS TO CUTSCENE LATER BUT THIS IS JUST FOR TESTING AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+                }
+                //SECRET SKIP BUTTON
+                if (mouseRect.X > 1900 && mouseRect.Y > 1000 && mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released)
+                {
+                    gameState = Gamestate.play; 
                 }
                 //SETTINGS
                 if (mouseRect.Intersects(settingsRect))
@@ -793,7 +799,7 @@ namespace SchoolZenog
             if (gameState == Gamestate.home && !settings)
             {
                 //BACKGROUND
-                spriteBatch.Draw(art, new Rectangle(0, 0, 1920, 1080), new Color(100, 100, 150, 1));
+                spriteBatch.Draw(homeTexture, new Rectangle(0, 0, 1920, 1080), new Color(100, 100, 150, 1));
                 //START BOX
                 spriteBatch.Draw(whiteText, startRect, startColor);
                 spriteBatch.DrawString(Font1, startText, new Vector2(855, 550), Color.Black);
@@ -816,7 +822,7 @@ namespace SchoolZenog
                 if (gameState == Gamestate.home)
                 {
                     //BACKGROUND
-                    spriteBatch.Draw(art, new Rectangle(0, 0, 1920, 1080), new Color(100, 100, 150, 1));
+                    spriteBatch.Draw(homeTexture, new Rectangle(0, 0, 1920, 1080), new Color(100, 100, 150, 1));
                     spriteBatch.Draw(whiteText, new Rectangle(400, 400, 1200, 500), startColor);
                     //LOGO
                     spriteBatch.Draw(logo, new Rectangle(690, 10, 500, 500), Color.White);
@@ -871,6 +877,9 @@ namespace SchoolZenog
             //LOADING
             if (gameState == Gamestate.loading)
             {
+                //BACKGROUND
+                spriteBatch.Draw(art, new Rectangle(0, 0, 1920, 1080), new Color(100, 100, 150, 1));
+                //LOADING
                 spriteBatch.DrawString(Font1, introText, introTextVect, introTextColor);
             }
             spriteBatch.End();

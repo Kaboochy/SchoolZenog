@@ -45,6 +45,7 @@ Content\ZyRunning.wma
 Content\ZyWalking.xnb
 Content\ZyWalking.wma
 Content\keyboard.xnb
+Content\homescreen.xnb
 Content\Zy_attack11.txt
 Content\Zy_attack12.txt
 Content\Zy_attack13.txt

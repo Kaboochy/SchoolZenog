@@ -320,6 +320,15 @@
       <Output>D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Release\Content\keyboard.xnb</Output>
       <Time>2022-05-04T19:44:20.7693076-05:00</Time>
     </Item>
+    <Item>
+      <Source>homescreen.jpg</Source>
+      <Name>homescreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Github\SchoolZenog\SchoolZenog\SchoolZenog\SchoolZenog\bin\x86\Release\Content\homescreen.xnb</Output>
+      <Time>2022-05-05T14:58:44.1414953-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{3C333FFA-18B7-4572-AC2D-1572B0D35DA5}</ContentProjectGUID>
