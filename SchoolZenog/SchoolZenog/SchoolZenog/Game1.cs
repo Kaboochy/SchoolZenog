@@ -22,7 +22,7 @@ namespace SchoolZenog
             volumeBar, volumeSlider, backRect, skipRect, bubbleRect, cutsceneTextRect, zyGreenRect, zyBlueRect;
         Texture2D zyText, backgroundText, blackText, whiteText, art, cutscene1, cutscene2, bubbleText,
             hudText, zyGreenText, zyBlueText, hudGray, zyGreenRText, logo, keybo, homeTexture;
-        bool paused, settings;
+        bool paused, settings, playthrough;
         int frames, zyHealth, zyShield, introTimer, r, g, b, d, scriptNum,
             enemiesDefeated, score, endScreenBrightness, quitTimer, move;
         double backX, x;
@@ -118,6 +118,7 @@ namespace SchoolZenog
             quitTimer = 0;
             endScreenColor = new Color(0, 0, 0, endScreenBrightness);
             oldmouse = Mouse.GetState();
+            playthrough = false;
             gameState = Gamestate.home;
             base.Initialize();
         }
@@ -219,7 +220,10 @@ namespace SchoolZenog
                     startColor = new Color(100, 100, 100, 1);
                 if (mouseRect.Intersects(startRect) && mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released)
                 {
-                    gameState = Gamestate.cutscene; //CHANGE THIS TO CUTSCENE LATER BUT THIS IS JUST FOR TESTING AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+                    if (playthrough == false)
+                        gameState = Gamestate.cutscene; //CHANGE THIS TO CUTSCENE LATER BUT THIS IS JUST FOR TESTING AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+                    else
+                        gameState = Gamestate.play;
                 }
                 //SECRET SKIP BUTTON
                 if (mouseRect.X > 1900 && mouseRect.Y > 1000 && mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released)
@@ -699,8 +703,57 @@ namespace SchoolZenog
                         quitColor = new Color(50, 50, 50, 1);
                     else
                         quitColor = new Color(100, 100, 100, 1);
+                    //RESET EVERYTHING WHEN GAME ENDS
                     if (mouseRect.Intersects(quitRect) && mouse.LeftButton == ButtonState.Pressed && oldmouse.LeftButton == ButtonState.Released)
                     {
+                        /*
+                        //destRect = new Rectangle(800, 750, 300, 300);
+                        zyHealth = 1920;
+                        zyShield = 1920;
+                        enemiesDefeated = 1;
+                        score = 0;
+                        startText = "START";
+                        settingsText = "OPTIONS";
+                        quitText = "QUIT";
+                        startRect = new Rectangle(790, 540, 320, 120);
+                        settingsRect = new Rectangle(790, 690, 320, 120);
+                        quitRect = new Rectangle(790, 840, 320, 120);
+                        //mouseRect = new Rectangle(10, 10, 10, 10);
+                        startColor = new Color(100, 100, 100, 1);
+                        settingsColor = new Color(100, 100, 100, 1);
+                        quitColor = new Color(100, 100, 100, 1);
+                        //settings = false;
+                        //paused = false;
+                        //INTRO
+                        skipRect = new Rectangle(1720, 880, 200, 200);
+                        skipText = "SKIP";
+                        introText = "In the year 2436";
+                        introTextColor = new Color(r, r, r);
+                        r = 0;
+                        introTimer = 0;
+                        b = 0;
+                        introTextVect = new Vector2(600, 500);
+                        //CUTSCENES
+                        scriptNum = 1;
+                        cutsceneText = "";
+                        finalText = "";
+                        g = 0;
+                        d = 0;
+                        a = 1f;
+                        cutsceneTextColor = new Color(new Vector4(a, a, a, a));
+                        cutsceneTextRect = new Rectangle(0, 780, 1920, 300);
+                        cutsceneColor = new Color(d, d, d);
+                        nextColor = Color.Gray;
+                        frames = 0;
+                        endScreenBrightness = 0;
+                        finalScript = "";
+                        quitTimer = 0;
+                        endScreenColor = new Color(0, 0, 0, endScreenBrightness);
+                        playthrough = true;
+                        //JACOB STUFF RESET
+                        Ranger.timer = 150;
+
+                        */
                         Exit(); //CHANGE TO --> gameState = Gamestate.home; <-- if you want to return to menu instead of close game
                     }
                 }
